@@ -329,7 +329,7 @@ streams.push({
   "partnerBox": [
     {
       "text": "beuthBox", // high
-      "image": "../assets/beuthbox-logo.png",
+      "image": "/assets/beuthbox-logo.png",
       "url": "1234"
     },{
       "text": "beuthBox", // high
@@ -367,7 +367,7 @@ streams.push({
   "linkBox": [
     {
       "text": "beuthBox", // high
-      "image": "../assets/beuthbox-logo.png",
+      "image": "/assets/beuthbox-logo.png",
       "url": "1234"
     },{
       "text": "beuthBox", // high
