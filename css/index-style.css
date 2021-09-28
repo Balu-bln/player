@@ -226,12 +226,11 @@ a:hover img{
     cursor: pointer;
     padding: 1em;
     user-select: none;
-
-    font-size: .7em;
+    font-weight: bold;
+    font-size: 1em;
     transition: 0.5s;
 }
 .debug-style:hover{
-    font-size: 1em;
     font-weight: bold;
     background-color: white;
     color: #0098a1;

@@ -380,7 +380,7 @@ streams.push({
 // 23.09.2021 + 28.09.2021
 // Veranstalter : Team beuthBox
 streams.push({
-  "tag": "lectureRecordingWorkshop",
+  "tag": "LR-Workshop",
   "titleTop": "Workshop - Lecture Recording",
   "title": "Dieser text dient als Beispielbeschreibung für unseren heutigen Workshop und kann frei gewählt werden. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown",
   "image": "https://www.beuth-hochschule.de/fileadmin/oe/pressestelle/bild/news/2020-01-27_Neuer-Name_Beuth-Buchstaben-verhuellt.jpg",

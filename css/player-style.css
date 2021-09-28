@@ -196,12 +196,15 @@ svg{
 
 
 /** ChangePosition controls / HalfScreen controls -------------------------------------*/
-#halfScreen-PlayerDiv , #changePosition-PlayerDiv{
+#changePosition-PlayerDiv{
     position: relative;
     display: flex;
     justify-content: flex-end;
     flex: 1;
     height: 100%;
+}
+#halfScreen-PlayerDiv{
+    display: none;
 }
 
 .halfScreen-path{

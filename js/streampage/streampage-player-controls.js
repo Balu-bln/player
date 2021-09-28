@@ -80,7 +80,8 @@ let nanocosmosBugfix = function (){
     // Nanocosmos player changes the attributes of the second(mini) player after fullscreen event is fired
     let observer = new MutationObserver(function (mutations){
         mutations.forEach(function (mutations){
-            if (!sideView) rotatePlayerTwoAlignment.refresh();
+            //if (!sideView) rotatePlayerTwoAlignment.refresh();
+            rotatePlayerTwoAlignment.refresh();
         })
     });
     observer.observe(document.getElementById("playerDiv2"), {
@@ -284,8 +285,14 @@ let halfScreenPlayer = function (){
 
         document.getElementById("switch").style.display = "block";
     }
-
 }
+/*
+player.onmouseover = function (){
+    setTimeout(function (){
+        document.getElementById("playerDivs").style.visibility = "none";
+    }, 3000);
+}
+ */
 
 
 /**
