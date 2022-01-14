@@ -10,8 +10,11 @@
  * @type {string} position in clear name
  */
 let secondPlayerPosition = "bottomRight";
+let splittScreen = false;
 
+let dualPlayer = true;
 let sideView = true;
+let lastPosition = "";
 
 /**
  * Applies in nanoplayer-streamconfig saved settings to the website style
@@ -63,12 +66,29 @@ let initPlayerControls = function (){
         rotatePlayerTwoAlignment.switchPosition(secondPlayerPosition);
     }
 
-    document.getElementById("halfScreen").onclick = function (){
-        halfScreenPlayer();
+    document.getElementById("oneDiv").onclick = function(){
+        hideShowSplittScreenButton();
+        hideShowSwitchPositionButton();
+        onePlayer();
+    }
+
+    document.getElementById("splittScreen").onclick = function (){
+        playerSplittScreen.refresh();
+    }
+
+    document.getElementById("twoDivs").onclick = function(){
+        //twoPlayers();
+        hideShowTwoDivsButton();
+        hideShowOneDivButton();
+        hideShowSwitchPositionButton();
     }
 
     document.getElementById("changePosition").onclick = function (){
         switchPlayerPosition();
+    }
+
+    document.getElementById("player").onmousemove = function (){
+        fadeControls();
     }
 }
 
@@ -80,11 +100,22 @@ let nanocosmosBugfix = function (){
     // Nanocosmos player changes the attributes of the second(mini) player after fullscreen event is fired
     let observer = new MutationObserver(function (mutations){
         mutations.forEach(function (mutations){
-            //if (!sideView) rotatePlayerTwoAlignment.refresh();
-            rotatePlayerTwoAlignment.refresh();
+            if (sideView) rotatePlayerTwoAlignment.refresh();
         })
     });
     observer.observe(document.getElementById("playerDiv2"), {
+        attributes : true
+    })
+ //TODO umsetzten
+
+    let observer2 = new MutationObserver(function (mutations2){
+
+        mutations2.forEach(function (mutations2){
+            //if (!splittScreen) playerSplittScreen.refresh();
+        })
+
+    });
+    observer2.observe(document.getElementById("playerDiv2"), {
         attributes : true
     })
 }
@@ -136,7 +167,7 @@ let changeVolume = function (){
  * Make the Player to fullscreen
  */
 let playerFullscreen = function (){
-    let playerDivs = document.getElementById("playerDivs")
+    let playerDivs = document.getElementById("playerDivs");
 
     if (playerDivs.requestFullscreen) {
         playerDivs.requestFullscreen();
@@ -242,7 +273,6 @@ let rotatePlayerTwoAlignment = {
  * Switches the position of the two players
  */
 let switchPlayerPosition = function (){
-
     let videoOneElement = document.getElementById("h5live-playerDiv");
     let videoTwoElement = document.getElementById("h5live-playerDiv2");
 
@@ -254,46 +284,91 @@ let switchPlayerPosition = function (){
 }
 
 /**
- *
+ * TODO wird im Fullscreen / exit Fullscreen zurückgesetzt
  */
-let halfScreenPlayer = function (){
-    let player = document.getElementById("playerDiv");
-    let player2 = document.getElementById("playerDiv2");
+let playerSplittScreen = {
 
-    if(player2.style.top)
+    splittScreenActive : function(){
+        let player = document.getElementById("playerDiv");
+        let player2 = document.getElementById("playerDiv2");
 
-    if(player2.style.width === "30%"){
+        splittScreen = true;
+        sideView = false;
+        document.getElementById("splittScreen").style.stroke = "red";
 
-        sideView = true;
+        lastPosition = rotatePlayerTwoAlignment.getLastState();
+        rotatePlayerTwoAlignment.switchPosition("topRight");
+        document.getElementById("switch").style.display ="none";
+
         player.style.width = "50%";
 
         player2.style.width = "50%";
         player2.style.height = "100%";
         player2.style.margin = "0";
         player2.style.borderRadius = "0";
+    },
+    splittScreenDeactive : function (){
+        let player = document.getElementById("playerDiv");
+        let player2 = document.getElementById("playerDiv2");
 
-        document.getElementById("switch").style.display = "none";
-    }else{
+        splittScreen = false;
+        sideView = true;
+        document.getElementById("splittScreen").style.stroke = "white";
 
-        sideView = false;
+        rotatePlayerTwoAlignment.switchPosition(lastPosition);
+        document.getElementById("switch").style.display ="flex";
+
         player.style.width = "100%";
 
         player2.style.width = "30%";
         player2.style.height = "auto";
         player2.style.margin = "5px";
         player2.style.borderRadius = "10px";
-
-        document.getElementById("switch").style.display = "block";
+    },
+    refresh : function (){
+        if(!splittScreen){
+            this.splittScreenActive();
+        }else{
+            this.splittScreenDeactive();
+        }
     }
 }
-/*
-player.onmouseover = function (){
-    setTimeout(function (){
-        document.getElementById("playerDivs").style.visibility = "none";
-    }, 3000);
-}
- */
 
+/**
+ * TODO anpassen wird im Fullscreen / exit Fullscreen zurückgesetzt
+ */
+let onePlayer = function(){
+    if(dualPlayer){
+        sideView = true;
+        toggleElementVisibility(document.getElementById("playerDiv2"));
+        dualPlayer = false;
+    } else{
+        sideView = false;
+        toggleElementVisibility(document.getElementById("playerDiv2"));
+        dualPlayer = true;
+    }
+
+}
+
+/**
+ * TODO anpassen / funktioniert nicht ....
+ */
+let fadeControls = function (){
+
+    document.getElementById("controls-playerDiv").style.display = "flex";
+    document.getElementById("player").onmouseout = function(){
+        document.getElementById("controls-playerDiv").style.display = "none";
+    }
+
+
+
+        /*clearTimeout(timeout);
+        timeout = setTimeout(
+            function(){
+                alert("move your mouse");
+            }, 10000);*/
+
+}
 
 /**
  * Switch between hide and show of the play button
@@ -335,6 +410,34 @@ let hideShowFullscreenButton = function () {
  */
 let hideShowExitFullscreenButton = function () {
     toggleElementVisibility(document.getElementById("exitFullscreen"));
+}
+
+/**
+ * Switch between hide and show of the switchPosition button
+ */
+let hideShowSwitchPositionButton = function () {
+    toggleElementVisibility(document.getElementById("switch"));
+}
+
+/**
+ * Switch between hide and show of the splittScreen button
+ */
+let hideShowSplittScreenButton = function () {
+    toggleElementVisibility(document.getElementById("splittScreen"));
+}
+
+/**
+ * Switch between hide and show of the oneDiv button
+ */
+let hideShowOneDivButton = function () {
+    toggleElementVisibility(document.getElementById("oneDiv"));
+}
+
+/**
+ * Switch between hide and show of the twoDivs button
+ */
+let hideShowTwoDivsButton = function () {
+    toggleElementVisibility(document.getElementById("twoDivs"));
 }
 
 /**

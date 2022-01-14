@@ -82,6 +82,11 @@ let showDualPlayer = function (){
     if (switchControlElement.style.display === "none") switchControlElement.style.display = displayAttributeSwitchControl;
     else switchControlElement.style.display = "none";
 
+    let oneDivControlElement = document.getElementById("divMode-PlayerDiv");
+    if (displayAttributeSwitchControl === undefined) displayAttributeSwitchControl = oneDivControlElement.style.display;
+    if (oneDivControlElement.style.display === "none") oneDivControlElement.style.display = displayAttributeSwitchControl;
+    else oneDivControlElement.style.display = "none";
+
     let halfScreenControlElement = document.getElementById("halfScreen-PlayerDiv");
     if (displayAttributeSwitchControl === undefined) displayAttributeSwitchControl = halfScreenControlElement.style.display;
     if (halfScreenControlElement.style.display === "none") halfScreenControlElement.style.display = displayAttributeSwitchControl;

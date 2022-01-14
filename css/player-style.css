@@ -6,6 +6,8 @@
     justify-content: center;
 }
 
+
+
 #contentPlayer{
     display: flex;
     flex: initial;
@@ -83,7 +85,7 @@ video{
 }
 
 #controls-playerDiv{
-    display: flex;
+    display: none;
     width: 100%;
     height: 50px;
     max-height: 71px;
@@ -95,6 +97,8 @@ video{
     visibility: visible;
     align-items: center;
     justify-content: center;
+    transition: 1s;
+    backdrop-filter: blur(1px);
 }
 
 svg{
@@ -195,7 +199,7 @@ svg{
 }
 
 
-/** ChangePosition controls / HalfScreen controls -------------------------------------*/
+/** ChangePosition controls / splittScreen controls -------------------------------------*/
 #changePosition-PlayerDiv{
     position: relative;
     display: flex;
@@ -203,11 +207,15 @@ svg{
     flex: 1;
     height: 100%;
 }
-#halfScreen-PlayerDiv{
-    display: none;
+#splittScreen-PlayerDiv, #divMode-PlayerDiv{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    height: 100%;
 }
 
-.halfScreen-path{
+.splittScreen-path{
     stroke-width: 0;
     fill: white;
 }

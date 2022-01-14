@@ -376,38 +376,24 @@ streams.push({
     }]
 });
 
-// Workshop Stream : Lecture Recording
-// 23.09.2021 + 28.09.2021
-// Veranstalter : Team beuthBox
+// Userbility Engineering Stream von Robert Strzebkowski
+// 14.10.2021
+// Veranstaltung : Usability Engineering
+// Veranstalter : Robert Strzebkowski
+// Ort : Raum D338
 streams.push({
-  "tag": "LR-Workshop",
-  "titleTop": "Workshop - Lecture Recording",
-  "title": "Dieser text dient als Beispielbeschreibung für unseren heutigen Workshop und kann frei gewählt werden. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown",
-  "image": "https://www.beuth-hochschule.de/fileadmin/oe/pressestelle/bild/news/2020-01-27_Neuer-Name_Beuth-Buchstaben-verhuellt.jpg",
-  "debug": true,
+  "tag": "Berufungskommission",
+  "titleTop": "Berufungskommission Architektur 1106",
+  "title": "Fachbereich IV",
+  "image": "",
+  "debug": false,
   "chat": true,
-  "partnerBox": [
-    {
-      "text": "Beuth Hoschschule für Technik",
-      "image": "https://www.beuth-hochschule.de/fileadmin/images/Beuth_Logo_horizontal.png",
-      "url": "https://www.beuth-hochschule.de/"
-    },
-    {
-      "text": "",
-      "image": "https://beuthbox.beuth-hochschule.de/assets/beuthbox-logo.svg",
-      "url": "https://beuthbox.beuth-hochschule.de/"
-    },
-    {
-      "text": "",
-      "image": "https://www.nanocosmos.de/v6/images/logo-nav.png",
-      "url": "https://www.nanocosmos.de/"
-    }],
-  "linkBox": [
-    {
-      "text": "",
-      "image": "https://www.beuth-hochschule.de/fileadmin/images/Beuth_Logo_horizontal.png",
-      "url": "https://www.beuth-hochschule.de/"
-    }],
+  /*"partnerBox": [{}],*/
+  "linkBox": [{
+    "text": "Fachbereich IV (Architektur)",
+    "image": "",
+    "url": "https://www.bht-berlin.de/iv"
+  }],
   "entries":/* [{ "streamname": "CD6oL-2kE1g" }] */[
     {
       "streamname": "RBJ00-J5qUb", // high
@@ -432,6 +418,55 @@ streams.push({
     },
     {
       "streamname": "RBJ00-VuvZf", // low
+      "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
+    }],
+});
+
+/**
+
+ */
+streams.push({
+  "tag": "Rupp+Hubrach-Wissenschaftspreis",
+  "titleTop": "Festveranstaltung zur Verleihung des Rupp+Hubrach-Wissenschaftspreises",
+  "title": "Virtual-Reality-basierte Untersuchung des Orientierungsverhaltens bei Glaukom",
+  "image": "assets/img/backgrounds/R+H_backgroundWHITE2021.jpg",
+  "debug": false,
+  "chat": false,
+  /*"partnerBox": [
+    {
+      "image": "",
+      "url": ""
+     }],*/
+  "linkBox": [
+    {
+      "text": "",
+      "image": "assets/img/logos/logoR+H2021.png",
+      "url": "https://www.rh-brillenglas.de/"
+    }],
+  "entries":/* [{ "streamname": "CD6oL-2kE1g" }] */[
+    {
+      "streamname": "RBJ00-4E5xr", // high
+      "info": { "bitrate": 3000, "width": 1280, "height": 720, "framerate": 25 }
+    },
+    {
+      "streamname": "RBJ00-m2iIC", // medium
+      "info": { "bitrate": 1200, "width": 852, "height": 480, "framerate": 30 }
+    },
+    {
+      "streamname": "RBJ00-xf0DT", // low
+      "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
+    }],
+  "dual": [
+    {
+      "streamname": "RBJ00-5Sr8X", // high
+      "info": { "bitrate": 3000, "width": 1280, "height": 720, "framerate": 25 }
+    },
+    {
+      "streamname": "RBJ00-eCnYR", // medium
+      "info": { "bitrate": 1200, "width": 852, "height": 480, "framerate": 30 }
+    },
+    {
+      "streamname": "RBJ00-qVRuP", // low
       "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
     }],
 });
