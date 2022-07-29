@@ -24,12 +24,26 @@ let applyStreamStyle = function (){
         setBackgroundImage(streamConfig);
         setLinkBox(streamConfig);
         setPartnerBox(streamConfig);
+        setTextFields(streamConfig);
+        applyExtraStyle(streamConfig);
 
         console.log("Stream Style applied")
     }else {
         console.log("Default Stream Style applied")
     }
 }
+
+/**
+ * Set the player picture
+ * @param streamConfig
+ */
+let setPlayerPicture = function (streamConfig){
+    let errorElement = document.getElementById("error");
+    if(errorElement != null){
+        document.getElementById("playerDiv").style.backgroundImage = "../assets/img/error/stream-offline.jpg";
+    }else{}
+}
+
 
 /**
  * Sets the page title of the Streaming page
@@ -97,7 +111,8 @@ let setLinkBox = function (streamConfig){
 
     if (streamConfig.linkBox !== undefined) {
         let linkBoxes = streamConfig.linkBox;
-        console.log("LINKBOXES : " + streamConfig.linkBox.length);
+
+        // For every LinkBox item
         for (let i = 0; i < streamConfig.linkBox.length; i++){
 
             let a = document.createElement("a");
@@ -105,17 +120,19 @@ let setLinkBox = function (streamConfig){
             a.target = "_blank";
             a.className = "linkButton";
 
-            let div = document.createElement("div");
-            div.className = "linkText";
-            div.innerText = linkBoxes[i].text;
-            a.appendChild(div);
+            if(linkBoxes[i].text !== "" && linkBoxes[i].image === ""){
+                let div = document.createElement("div");
+                div.className = "linkText";
+                div.innerText = linkBoxes[i].text;
+                a.appendChild(div);
+            } else{
+                let image = document.createElement("img");
+                image.src = linkBoxes[i].image;
+                image.className = "linkBoxImages";
+                a.appendChild(image);
+            }
             //a.innerText = linkBoxes[i].text;
             //a.style.backgroundImage = "url(" + linkBoxes[i].image + ")";
-
-
-            let image = document.createElement("img");
-            image.src = linkBoxes[i].image;
-            a.appendChild(image);
 
             linkBoxElement.appendChild(a);
         }
@@ -138,18 +155,82 @@ let setPartnerBox = function (streamConfig){
 
     if (streamConfig.partnerBox !== undefined) {
         let linkBoxes = streamConfig.partnerBox;
-        console.log("PARTNERBOXES : " + streamConfig.partnerBox.length);
+        //console.log("PARTNERBOXES : " + streamConfig.partnerBox.length);
         for (let i = 0; i < streamConfig.partnerBox.length; i++){
 
             let a = document.createElement("a");
             a.href = linkBoxes[i].url;
             a.target = "_blank";
-            a.innerText = linkBoxes[i].text;
-            a.style.backgroundImage = "url(" + linkBoxes[i].image + ")";
+            if(linkBoxes[i].text !== "undefined" && linkBoxes[i].image === undefined){
+                a.innerText = linkBoxes[i].text;
+            }else{
+                let image = document.createElement("img");
+                image.src = linkBoxes[i].image;
+                image.className = "partnerBoxImages";
+                a.appendChild(image);
+                //a.style.backgroundImage = "url(" + linkBoxes[i].image + ")";
+            }
             a.className = "linkButton";
 
             partnerBoxElement.appendChild(a);
         }
+    }
+}
+
+/**
+ * Activate and Set the Text Field content
+ * @param streamConfig the stream config
+ */
+let setTextFields = function (streamConfig){
+    let textFieldDivs = document.getElementById("textField");
+
+
+    if (streamConfig.textFields !== undefined && streamConfig.textFields) {
+
+        let textFieldTitleDiv = document.createElement("div");
+        textFieldTitleDiv.className = "textFieldTitle";
+        textFieldTitleDiv.innerHTML = streamConfig.textFields[0].title;
+        textFieldDivs.appendChild(textFieldTitleDiv);
+
+        let textFieldContentDiv = document.createElement("div");
+        textFieldContentDiv.className = "textFieldContent";
+        textFieldDivs.appendChild(textFieldContentDiv);
+
+        for (let i = 1; i < streamConfig.textFields.length; i++){
+
+            //let frameDiv = document.createElement("div");
+            //frameDiv.className = "textField_content";
+            let textBoxDiv = document.createElement("div");
+            textBoxDiv.className = "textBox"
+            let headerDiv = document.createElement("div");
+            headerDiv.className = "textBox_header";
+            headerDiv.innerHTML = streamConfig.textFields[i].header;
+            let textDiv = document.createElement("div");
+            textDiv.className = "textBox_text";
+            textDiv.innerHTML = streamConfig.textFields[i].text;
+
+            textBoxDiv.appendChild(headerDiv);
+            textBoxDiv.appendChild(textDiv);
+            //textFieldDivs.appendChild(textBoxDiv);
+
+            textFieldContentDiv.appendChild(textBoxDiv);
+        }
+    }else {
+        textFieldDivs.parentNode.removeChild(textFieldDivs);
+    }
+}
+
+/**
+ * Overwrite the standard css with "this" css configs
+ * @param streamConfig the stream config
+ */
+let applyExtraStyle = function (streamConfig){
+    if (streamConfig.customStyle !== undefined && streamConfig.customStyle){
+        let style = document.createElement("style")
+        style.id = getStreamID() + "_style";
+        style.appendChild(document.createTextNode(""));
+        style.textContent = streamConfig.customStyle;
+        document.head.appendChild(style);
     }
 }
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Nanocosmos Player der BHT</title>
-    <link rel="icon" href="assets/img/logos/beuthbox-logo-only.ico" type="image/x-icon">
+    <link rel="icon" href="assets/img/logos/mediabox-small-logo.ico" type="image/x-icon">
 
     <script src="js/lib/beuthBoxToolKit.js"></script>
     <script src="js/nanoplayerInit/nanoplayer-helper.js"></script>
@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="css/chat-style.css">
 </head>
 <body>
+<!-- Test -->
+
 <div id="page">
     <div id="debug">
         <div class="debug-style" id="debug-chat"><p>Chat</p></div>
@@ -34,15 +36,15 @@
     </div>
     <div id="header">
         <a href="https://www.bht-berlin.de/"  target="_blank">
-            <img id="bht-logo" src="assets/img/logos/bht_logo.png">
+            <img id="beuth-logo" src="assets/img/logos/bht_logo.png">
         </a>
         <a href="https://beuthbox.beuth-hochschule.de/" target="_blank">
-            <img id="beuthbox-logo" src="assets/img/logos/beuthbox-logo.png">
+            <img id="beuthbox-logo" src="assets/img/logos/mediabox-big-logo.jpg">
         </a>
     </div>
     <div id="main" class="bottom-top-shadow">
         <div id="titleTop">Beuth Hochschule für Technik - Stream</div>
-        <div id="titleSub">Akademische Versammlung 2021</div>
+        <div id="subBackground"><div id="titleSub">Akademische Versammlung 2021</div></div>
         <div id="contentBox">
             <div id="content">
                 <div id="player">
@@ -89,7 +91,7 @@
                                     <input id="volume" type="range" min="1" max="100" value="50">
                                 </div>
                                 <div id="switch-PlayerDiv">
-                                    <div class="controls" id="switch" style="display: block">
+                                    <div class="controls" id="switch">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 308.76 296.15">
                                             <path d="M98.52,260.46c56.34,107.33,242,86.61,242-50"
                                                   transform="translate(-57.12 -42.71)"/>
@@ -100,29 +102,6 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div id="divMode-PlayerDiv">
-                                    <div class="controls" id="oneDiv" style="display: block">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 381 239.17">
-                                            <path d="M410,153.1V352l-104,.23H69V153.1H410m20-20H49V372.27H306L430,372V133.1Z" transform="translate(-49 -133.1)"/>
-                                        </svg>
-                                    </div>
-                                    <div class="controls" id="twoDivs" style="display: none">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 381 239.17">
-                                            <path d="M410,153.1V352l-104,.23H69V153.1H410m20-20H49V372.27H306L430,372V133.1Z" transform="translate(-49 -133.1)"/>
-                                            <path d="M392,263v72H249V263H392m10-10H239v92H402V253Z" transform="translate(-49 -133.1)"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div id="splittScreen-PlayerDiv">
-                                    <div class="controls" id="splittScreen">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 385 291">
-                                            <rect x="10" y="10" width="365" height="271"/>
-                                            <path d="M423,124V375H78V124H423m20-20H58V395H443V104Z" transform="translate(-58 -104)"/>
-                                            <line x1="192" y1="13" x2="192" y2="276"/>
-                                        </svg>
-                                    </div>
-                                </div>
-
                                 <div id="changePosition-PlayerDiv">
                                     <div class="controls" id="changePosition">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 424 282.9">
@@ -131,6 +110,16 @@
                                             <path d="M463,331v75H306V331H463m10-10H296v95H473V321Z"
                                                   transform="translate(-49 -133.1)"/>
                                             <polyline points="213 212.9 213 156.9 291 156.9"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div id="halfScreen-PlayerDiv">
+                                    <div class="controls" id="halfScreen">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 385 291">
+                                            <rect x="10" y="10" width="365" height="271"/>
+                                            <path class="halfScreen-path" d="M423,124V375H78V124H423m20-20H58V395H443V104Z" transform="translate(-58 -104)"/>
+                                            <path class="halfScreen-path" d="M371,210v80.18H276V210h95m20-20H256V310.18H391V190Z" transform="translate(-58 -104)"/>
+                                            <path class="halfScreen-path" d="M216,210v80.18H121V210h95m20-20H101V310.18H236V190Z" transform="translate(-58 -104)"/>
                                         </svg>
                                     </div>
                                 </div>
@@ -193,12 +182,13 @@
             </div>
         </div>
         <div id="playerSubtitle">Sie sehen einen Livestream der vom Media-Service Team der BHT betreut wird, über die nanoStream Cloud.</div>
-        <div id="error"></div>
+        <div id="textField"></div>
         <div id="linkBox">
-            <a href="https://beuthbox.beuth-hochschule.de/" class="linkButton" target="_blank">
+            <a href="https://projekt.bht-berlin.de/lehrfilmstudio/?print=302%27la%22jeqkac" class="linkButton" target="_blank">
                 Media-Service der BHT Videoplattform
             </a>
         </div>
+        <div id="error"></div>
     </div>
     <div id="footer">
         <div class="partner-wrapper" id="partner-wrapper">
@@ -208,6 +198,8 @@
 
         </div>
         <br>
+        <b><i>Hinweis: Dieser Player ist noch nicht für alle Devices und Safari optimiert!</i></b>
+        <br><br>
         Der BHT-LivePlayer dient dem Live Streaming von hochschulbezogenen Live Streams für Forschung, Lehre und
         Veranstaltungen.
         Der Livestream läuft über die nanoStream Cloud - Plattform des Unternehmens nanocosmos GmbH aus
@@ -215,9 +207,9 @@
         geltendem Recht, es werden nur anonymisierte Daten von und zu Server innerhalb Deutschlands bzw. der
         EU übertragen. Sie können den Dienst auch selbst nutzen für Hochschul-Zwecke. Bei Fragen wenden Sie sich bitte
         an das
-        <a href="https://beuthbox.beuth-hochschule.de/aboutus" target="_blank">Media-Service Team</a> / Prof Robert
+        <a href="https://beuthbox.beuth-hochschule.de/aboutus" target="_blank">Media-Service Team</a> / Prof. Dr. Robert
         Strzebkowski
-        (robertst at beuth-hochschule.de) oder BHT-LB Dipl.-Ing. Oliver Lietz (lietz at beuth-hochschule.de).
+        (robertst at bht-berlin.de) oder BHT-LB Dipl.-Ing. Oliver Lietz (lietz at bht-berlin.de).
 
         <p>
             <a href="https://www.bht-berlin.de/impressum" target="_blank">Impressum BHT</a> |
