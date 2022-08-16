@@ -1,6 +1,10 @@
 
 // define ABR playback stream names
 // stream groups: each stream group has 3 ABR streams
+/**
+ * The Streams and its custom styles bundled in an Array
+ * @type {*[]}
+ */
 let streams = [];
 
 // TEST Stream 00 --------------------------------------------------------------------------------------------------------------------------------------

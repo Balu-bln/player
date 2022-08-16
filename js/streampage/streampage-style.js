@@ -40,7 +40,7 @@ let applyStreamStyle = function (){
 let setPlayerPicture = function (streamConfig){
     let errorElement = document.getElementById("error");
     if(errorElement != null){
-        document.getElementById("playerDiv").style.backgroundImage = "../assets/img/error/stream-offline.jpg";
+        document.getElementById("playerDiv1").style.backgroundImage = "../assets/img/error/stream-offline.jpg";
     }else{}
 }
 
@@ -69,6 +69,10 @@ let setDescription = function (streamConfig){
     setDocumentIDElementInnerText(document.getElementById('titleSub'), streamConfig.title)
 }
 
+/**
+ * Set the Dual Player buttons
+ * @param streamConfig
+ */
 let setDualPlayer = function (streamConfig){
     if (streamConfig.dual === undefined){
         toggleElementVisibility(document.getElementById("playerDiv2"));
@@ -85,7 +89,7 @@ let setDualPlayer = function (streamConfig){
 let setChatBox = function (streamConfig){
 
     if (streamConfig.chat === undefined || streamConfig.chat !== true) {
-        toggleElementVisibility(document.getElementById("contentChat"));
+        toggleElementVisibility(document.getElementById("chat_configuration"));
     }
 }
 
@@ -240,5 +244,5 @@ let applyExtraStyle = function (streamConfig){
 document.addEventListener('DOMContentLoaded', function () {
     applyStreamStyle();
     //TODO Muss ausgelagert werden
-    startNanoPlayerMain();
+    initiateNanoplayers();
 });

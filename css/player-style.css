@@ -37,7 +37,7 @@ video{
     height: 100%;
 }
 
-#playerDiv{
+#playerDiv1{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -46,7 +46,8 @@ video{
 
 #playerDiv2{
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.00);
+    background-color: rgba(255, 255, 255, 0);
+    /*background-color: #0098a1;*/
     width: 30%;
     border-radius: 10px;
     margin:5px;
@@ -202,6 +203,9 @@ svg{
 
 
 /** ChangePosition controls / HalfScreen controls -------------------------------------*/
+#halfScreen{
+    border-radius: 10px;
+}
 #changePosition-PlayerDiv{
     position: relative;
     display: flex;
@@ -210,7 +214,11 @@ svg{
     height: 100%;
 }
 #halfScreen-PlayerDiv{
-    display: none;
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    flex: 1;
+    height: 100%;
 }
 
 .halfScreen-path{
@@ -237,7 +245,7 @@ svg{
     #player{
         width: 100%;
     }
-    #playerDiv{
+    #playerDiv1{
         width: 100%;
     }
 
@@ -255,7 +263,7 @@ svg{
 }
 
 @media screen and (max-width: 900px) {
-    #playerDiv{
+    #playerDiv1{
         width: 100%;
     }
 
@@ -265,7 +273,7 @@ svg{
 }
 
 @media screen and (max-width: 850px) {
-    #playerDiv{
+    #playerDiv1{
         width: 100%;
     }
 

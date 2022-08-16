@@ -80,3 +80,17 @@ let toggleElementVisibility = function(element){
         buttonElement.style.display = displayAttribute;
     } else buttonElement.style.display = "none";
 }
+
+/**
+ * Simple logging function for objects
+ * @param e function to be logged
+ */
+let logObject = function (e) {
+    if (typeof e === 'object') {
+        try {
+            e = JSON.stringify(e);
+        } catch (err) {
+        }
+    }
+    console.log(e);
+};
