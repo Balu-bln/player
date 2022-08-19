@@ -3,6 +3,7 @@
 const params = getUrlVars();
 const room = params.channel || 'default';
 ///////////////////////////////
+const localTime = new Date();
 
 /**
  * Helper function for arraybuffer
@@ -10,21 +11,21 @@ const room = params.channel || 'default';
  * @returns {ArrayBuffer}
  */
 function str2ab(str) {
-    var buf = new ArrayBuffer(str.length * 2); // 2 bytes for each char
-    var bufView = new Uint16Array(buf);
-    for (var i = 0, strLen = str.length; i < strLen; i++) {
+    let buf = new ArrayBuffer(str.length * 2); // 2 bytes for each char
+    let bufView = new Uint16Array(buf);
+    for (let i = 0, strLen = str.length; i < strLen; i++) {
         bufView[i] = str.charCodeAt(i);
     }
     return buf;
 }
 
 /**
- * ??? TODO
+ * ??? TODO parts not used, check function
  * @returns {{}}
  */
 function getUrlVars() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+    let vars = {};
+    let parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
         vars[key] = value;
     });
     return vars;
@@ -37,6 +38,7 @@ function getUrlVars() {
  * @param msg
  */
 function addReceived(msg) {
+    console.log("MASSAGE: " +msg);
     let doc = document.getElementById("all_messages");
     if (msg.user === document.getElementById('name').value) {
         doc.innerHTML +=
@@ -67,9 +69,9 @@ function addReceived(msg) {
 
 /**
  * Create a new JavaScript Date object based on the timestamp
- * @param timestamp
+ * @param timestamp date
  * @param form true or false
- * @returns {string}
+ * @returns {string} date & time
  */
 //Commit: 01.08.2022 - add Date in the convertTime (JH)
 function convertTime(timestamp, form) {
@@ -102,11 +104,12 @@ function convertTime(timestamp, form) {
  * Send the chat message if the SEND key enter
  * @param e
  */
-function enterMessage(e) {
+/*function enterMessage(e) {
     if (e.key === 'Enter' || e.keyCode === 13) {
         sendChatMessage();
     }
-}
+}*/
+
 
 //TODO Warum ist diese Abfrage ausserhalb der Funktion "sendChatMessage"?
 if ("WebSocket" in window) {
@@ -155,7 +158,7 @@ function sendChatMessage() {
  */
 ws.onmessage = function (evt) {
     // console.log(evt);
-    var received_msg = JSON.parse(evt.data);
+    let received_msg = JSON.parse(evt.data);
     // console.log(received_msg.length)
     if (Array.isArray(received_msg)) {
         if (received_msg.length > 0) {

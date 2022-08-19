@@ -5,7 +5,16 @@
 + Copyright (c) 2021 Steve Margenfeld (margenfeld.s@gmail.com)
  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
+/**
+ * Array containing all player objects
+ * @type {*[]} Array
+ */
 let players = [];
+
+/**
+ * id of the div where logs schould be dispolayed
+ * @type {string} string
+ */
 let logDiv = "status";
 
 /**

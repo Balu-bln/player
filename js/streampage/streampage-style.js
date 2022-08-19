@@ -8,29 +8,22 @@
 /**
  * Applies in nanoplayer-streamconfig saved settings to the website style
  */
-let applyStreamStyle = function (){
+let applyStreamStyle = function (streamConfig){
 
     console.log("Applying Stream Style...");
-    let streamID = getStreamID();
-    if (streamID !== undefined){
-        console.log("StreamID detected : " + streamID);
-        let streamConfig = getStreamConfig(streamID);
 
-        setPageTitle(streamConfig);
-        setTitleTop(streamConfig);
-        setDescription(streamConfig);
-        setDualPlayer(streamConfig);
-        setChatBox(streamConfig);
-        setBackgroundImage(streamConfig);
-        setLinkBox(streamConfig);
-        setPartnerBox(streamConfig);
-        setTextFields(streamConfig);
-        applyExtraStyle(streamConfig);
+    setPageTitle(streamConfig);
+    setTitleTop(streamConfig);
+    setDescription(streamConfig);
+    setDualPlayer(streamConfig);
+    setChatBox(streamConfig);
+    setBackgroundImage(streamConfig);
+    setLinkBox(streamConfig);
+    setPartnerBox(streamConfig);
+    setTextFields(streamConfig);
+    applyExtraStyle(streamConfig);
 
-        console.log("Stream Style applied")
-    }else {
-        console.log("Default Stream Style applied")
-    }
+    console.log("Stream Style applied")
 }
 
 /**
@@ -238,11 +231,135 @@ let applyExtraStyle = function (streamConfig){
     }
 }
 
+let generateStreamConfig = function (){
+
+    console.log("generate stream config")
+
+    let streamID = getStreamID();
+    let userStreamConfig = getStreamConfig(streamID);
+
+    let computedStreamConfig = {};
+    //TODO detect time segment
+
+    let timedStream;
+
+    if (userStreamConfig.time !== undefined){
+        userStreamConfig.time.forEach(function (time){
+
+            //TODO new date könnte man ersetzen durch einen server query für die atomuhr zb
+            let localTime = new Date();
+            let startDate = new Date(time.startDate);
+            let endDate = new Date(time.endDate);
+
+            //TODO hier weiter
+
+            console.log(localTime)
+            // stream is in timed stream timeframe
+            if (localTime > startDate && localTime < endDate){
+                console.log("in timeframe")
+                // timed stream is on the actual day
+                if (time.weekDay !== undefined && time.weekDay === localTime.getDay() || localTime.getDate() === time.day){
+                    // timed stream is in actual hour
+
+                    let startTime = new Date(
+                        localTime.getFullYear(),
+                        localTime.getMonth(),localTime.getDate(), time.hour, time.minute, 0)
+
+                    let endTime = new Date(startTime.getTime() + (time.duration * 60000))
+
+                    if (localTime >= startTime && localTime < endTime){
+                        console.log("in actual minute")
+                        if (timedStream) {
+                            console.error("Found two stream dates overlapping")
+                        }
+                        else timedStream = time;
+                    }
+                }
+            }
+        })
+    }
+
+
+    if (timedStream === undefined) timedStream = {}
+
+    let getTag = function (){
+        console.log("Under this")
+        console.log("GetTag ::: : " + timedStream.tag || userStreamConfig.tag || "")
+        return timedStream.tag || userStreamConfig.tag || ""
+    }
+
+    let getTitleTop = function (){
+        return timedStream.titleTop || userStreamConfig.titleTop || "Eine Streaming Page der BHT Berlin"
+    }
+
+    let getTitle = function (){
+        return timedStream.title || userStreamConfig.title || "Verwaltet vom MediaBox Team"
+    }
+
+    let getImage = function (){
+        return timedStream.image || userStreamConfig.image || ""
+    }
+
+    let getDebug = function (){
+        return timedStream.debug || userStreamConfig.debug || false
+    }
+
+    let getChat = function (){
+        return timedStream.chat || userStreamConfig.chat || false
+    }
+
+    let getSessionChat = function (){
+        return timedStream.sessionChat || userStreamConfig.sessionChat || false
+    }
+
+    let getCustomStyle = function (){
+        return timedStream.customStyle || userStreamConfig.customStyle || ""
+    }
+
+    let getPartnerBox = function (){
+        return timedStream.partnerBox || userStreamConfig.partnerBox || ""
+    }
+
+    let getLinkBox = function (){
+        return timedStream.linkBox || userStreamConfig.linkBox || ""
+    }
+
+    let getTextFields = function (){
+        return timedStream.textFields || userStreamConfig.textFields || ""
+    }
+
+    let getEntries = function (){
+        return timedStream.entries || userStreamConfig.entries || undefined
+    }
+
+    let getDual = function (){
+        return timedStream.dual || userStreamConfig.dual || undefined
+    }
+
+    computedStreamConfig.tag = getTag();
+    computedStreamConfig.titleTop = getTitleTop();
+    computedStreamConfig.title = getTitle();
+    computedStreamConfig.image = getImage();
+    computedStreamConfig.debug = getDebug();
+    computedStreamConfig.chat = getChat();
+    computedStreamConfig.sessionChat = getSessionChat();
+    computedStreamConfig.customStyle = getCustomStyle();
+    computedStreamConfig.partnerBox = getPartnerBox();
+    computedStreamConfig.linkBox = getLinkBox();
+    computedStreamConfig.textFields = getTextFields();
+    computedStreamConfig.entries = getEntries();
+    computedStreamConfig.dual = getDual();
+
+    return computedStreamConfig;
+}
+
 /**
  * Injector to start this script
  */
 document.addEventListener('DOMContentLoaded', function () {
-    applyStreamStyle();
-    //TODO Muss ausgelagert werden
-    initiateNanoplayers();
+
+    let streamConfig = generateStreamConfig();
+
+    applyStreamStyle(streamConfig);
+    initiateNanoplayers(streamConfig);
 });

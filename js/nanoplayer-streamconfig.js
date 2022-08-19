@@ -7,26 +7,21 @@
  */
 let streams = [];
 
-// TEST Stream 00 --------------------------------------------------------------------------------------------------------------------------------------
+// TEST Stream 01 --------------------------------------------------------------------------------------------------------------------------------------
 streams.push({
-  "tag": "test0",
+  "tag": "test01",
   "titleTop": "Test Title Top",
   "title": "Test Stream 0",
   "image": "https://www-cdn.eumetsat.int/files/styles/16_9_large/s3/2020-06/ASpot_MonitoringWeather.jpg?h=d1cb525d&itok=3jSPVbXF",
   "entries": [{ "streamname": "CD6oL-2kE1g" }]
 });
 
-// TEST Stream 01 --------------------------------------------------------------------------------------------------------------------------------------
-streams.push({
-  "tag": "test1",
-  "title": "Test Stream 1",
-  "entries": [{ "streamname": "RBJ00-6uALm" }]
-});
-
 // TEST Stream 02 --------------------------------------------------------------------------------------------------------------------------------------
 streams.push({
-  "tag": "test2abr",
-  "title": "Test Stream 2 / ABR",
+  "tag": "test2",
+  "titleTop": "Veranstaltungstitel",
+  "title": "Untertitel",
+  "chat": true,
   "entries": [
     {
       "streamname": "RBJ00-6uALm", // high
@@ -43,14 +38,14 @@ streams.push({
   ]
 });
 
-// BHT Asta Wahl --------------------------------------------------------------------------------------------------------------------------------------
+// BHT Asta Wahl  (TODO Veraltet!!! Erst Streamkeys bei Nanocosmos löschen, dann den Stream.) --------------------------------------------------------------------------------------------------------------------------------------
 streams.push({
   "tag": "bht-asta-wahl",
   "title": "BHT AStA-Wahl",
   "entries": [{ "streamname": "RBJ00-FzI9V" }]
 });
 
-// BHT Stream 1 --------------------------------------------------------------------------------------------------------------------------------------
+// BHT Stream 1  (TODO Veraltet!!! Erst Streamkeys bei Nanocosmos löschen, dann den Stream.) --------------------------------------------------------------------------------------------------------------------------------------
 streams.push({
   "tag": "bht1",
   "title": "BHT Stream 1",
@@ -58,7 +53,7 @@ streams.push({
   "entries": [{ "streamname": "RBJ00-IYDH9" }]
 });
 
-// Brückenkurse --------------------------------------------------------------------------------------------------------------------------------------
+// Brückenkurse (TODO Veraltet!!! Erst Streamkeys bei Nanocosmos löschen, dann den Stream.) --------------------------------------------------------------------------------------------------------------------------------------
 streams.push({
   "tag": "brueckenkurse",
   "title": "Brückenkurse",
@@ -78,7 +73,7 @@ streams.push({
   ]
 });
 
-// Begrüßung der Erstsemester im Fachbereich 5 -----------------------------------------------------------------------------------------------------------------
+// Begrüßung der Erstsemester im Fachbereich 5  (TODO Veraltet!!! Erst Streamkeys bei Nanocosmos löschen, dann den Stream.) -----------------------------------------------------------------------------------------------------------------
 streams.push({
   //"tag": "bht-es5",
   //"title": "Begrüßung der Erstsemester im Fachbereich 5",
@@ -104,7 +99,7 @@ streams.push({
   ]
 });
 
-// Media Stream 1 --------------------------------------------------------------------------------------------------------------------------------------
+// Media Stream 1  (TODO Veraltet!!! Erst Streamkeys bei Nanocosmos löschen, dann den Stream.) --------------------------------------------------------------------------------------------------------------------------------------
 streams.push({
   "tag": "media-stream-1",
   "title": "Media Stream 1",
@@ -124,7 +119,7 @@ streams.push({
   ]
 });
 
-// Media Stream 2 --------------------------------------------------------------------------------------------------------------------------------------
+// Media Stream 2  (TODO Veraltet!!! Erst Streamkeys bei Nanocosmos löschen, dann den Stream.) --------------------------------------------------------------------------------------------------------------------------------------
 streams.push({
   "tag": "media-stream-2",
   "title": "Media Stream 2",
@@ -144,7 +139,7 @@ streams.push({
   ]
 });
 
-// Media Stream 3 --------------------------------------------------------------------------------------------------------------------------------------
+// Media Stream 3  (TODO Veraltet!!! Erst Streamkeys bei Nanocosmos löschen, dann den Stream.) --------------------------------------------------------------------------------------------------------------------------------------
 streams.push({
   "tag": "media-stream-3",
   "title": "Media Stream 3",
@@ -164,7 +159,7 @@ streams.push({
   ]
 });
 
-// Media Stream 4 --------------------------------------------------------------------------------------------------------------------------------------
+// Media Stream 4  (TODO Veraltet!!! Erst Streamkeys bei Nanocosmos löschen, dann den Stream.) --------------------------------------------------------------------------------------------------------------------------------------
 streams.push({
   "tag": "media-stream-4",
   "title": "Media Stream 4",
@@ -184,7 +179,7 @@ streams.push({
   ]
 });
 
-// Media Stream 5 --------------------------------------------------------------------------------------------------------------------------------------
+// Media Stream 5  (TODO Veraltet!!! Erst Streamkeys bei Nanocosmos löschen, dann den Stream.) --------------------------------------------------------------------------------------------------------------------------------------
 streams.push({
   "tag": "media-stream-5",
   "title": "Media Stream 5",
@@ -204,7 +199,7 @@ streams.push({
   ]
 });
 
-// BHT Personalversammlung --------------------------------------------------------------------------------------------------------------------------------------
+// BHT Personalversammlung (TODO Wird dies noch benutzt???) --------------------------------------------------------------------------------------------------------------------------------------
 streams.push({
   "tag": "beuth-pv",
   "title": "BHT Personalversammlung",
@@ -224,7 +219,7 @@ streams.push({
   ]
 });
 
-// Akademische Versammlung 2021 ------------------------------------------------------------------------------------------------------------------------------
+// 2021 Akademische Versammlung ------------------------------------------------------------------------------------------------------------------------------
 streams.push({
   "tag": "beuth-av-2021",
   "titleTop": "Akademische Versammlung 2021",
@@ -250,21 +245,21 @@ streams.push({
   ]
 });
 
-// HRZ Test 1 ------------------------------------------------------------------------------------------------------------------------------
+// HRZ Test 1  (TODO Veraltet!!! Erst Streamkeys bei Nanocosmos löschen, dann den Stream.) ------------------------------------------------------------------------------------------------------------------------------
 streams.push({
   "tag": "hrz-test1",
   "title": "HRZ Test 1",
   "entries": [{ "streamname": "nH9ig-FwldJ" }]
 });
 
-// 360° Stream ------------------------------------------------------------------------------------------------------------------------------
+// 360° Stream  (TODO Veraltet!!! Erst Streamkeys bei Nanocosmos löschen, dann den Stream.) ------------------------------------------------------------------------------------------------------------------------------
 streams.push({
   "tag": "insta-test",
   "title": "360° Stream",
   "entries": [{ "streamname": "RBJ00-ERrTa" }]
 });
 
-// getreide-informationstagung ------------------------------------------------------------------------------------------------------------------------------
+// 2021 getreide-informationstagung ------------------------------------------------------------------------------------------------------------------------------
 streams.push({
   "tag": "getreide-informationstagung17Juni2021",
   "titleTop": "50. Wissenschaftliche Informationstagung am 17. Juni 2021",
@@ -286,7 +281,7 @@ streams.push({
   ]
 });
 
-// klima-ringvorlesung ------------------------------------------------------------------------------------------------------------------------------
+// 2021 klima-ringvorlesung ------------------------------------------------------------------------------------------------------------------------------
 streams.push({
   "tag": "klima-ringvorlesung",
   "titleTop": "1.5 °C Global Warming by 2030?",
@@ -309,7 +304,7 @@ streams.push({
   ]
 });
 
-// FabAccess Workshop ------------------------------------------------------------------------------------------------------------------------------
+// 2022 FabAccess Workshop ------------------------------------------------------------------------------------------------------------------------------
 streams.push({
   "tag": "fabAccess-Workshop",
   "titleTop": "FabAccess Workshop",
@@ -331,7 +326,7 @@ streams.push({
 });
 
 /**
- * Veralteter D338er Stream -----------------------------------------------------------------------------------------------------------------------------------
+ * Veralteter D338er Stream  (TODO Veraltet!!! Erst Streamkeys bei Nanocosmos löschen, dann den Stream.) -----------------------------------------------------------------------------------------------------------------------------------
  */
 streams.push({
   "tag": "D338",
@@ -1449,4 +1444,103 @@ streams.push({
       "streamname": "RBJ00-whkRf", // low
       "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
     }],
+});
+
+/**
+ *  Stream Haus Gauß(B) 2022 --------------------------------------------------------------------------------------------------------------------------------
+ */
+streams.push({
+  "tag": "bachelor",
+  "titleTop": "Testseite für die Bachelorarbeit Hoffmann/Margenfeld",
+  "title": "User Interface Design und Funktionalität einer Interaktiven Streaming Webseite<br>Web-technische Umsetzung einer interaktiven/konfigurierbaren Streaming Webseite",
+  "image": "assets/img/backgrounds/NILO180318-GMS-BEUTH-3491.jpg",
+  "debug": false,
+  "chat": false,
+  "sessionChat": true,
+  "customStyle": `
+    .textFieldTitle{ color: white; }
+    #playerSubtitle {
+        color: rgb(251 251 251 / 52%);
+      }
+    #error {
+      color: rgb(112 0 0);
+      }
+    #chat{
+      background-color: #000000a8;
+      }
+              `,
+  "partnerBox": [
+    {}],
+  "linkBox": [],
+  "textFields" : [
+    { "title": "ddddd"
+    },
+    { "header": "dfgvgsv",
+      "text": "dsffcsdccccccc"
+    },
+  ],
+  "entries":[
+    {
+      "streamname": "RBJ00-kqn5g", // high
+      "info": { "bitrate": 3000, "width": 1280, "height": 720, "framerate": 25 }
+    },
+    {
+      "streamname": "RBJ00-0yDQg", // medium
+      "info": { "bitrate": 1200, "width": 852, "height": 480, "framerate": 30 }
+    },
+    {
+      "streamname": "RBJ00-q782N", // low
+      "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
+    }],
+  "dual": [
+    {
+      "streamname": "RBJ00-vqR0Q", // high
+      "info": { "bitrate": 3000, "width": 1280, "height": 720, "framerate": 25 }
+    },
+    {
+      "streamname": "RBJ00-yYdjg", // medium
+      "info": { "bitrate": 1200, "width": 852, "height": 480, "framerate": 30 }
+    },
+    {
+      "streamname": "RBJ00-whkRf", // low
+      "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
+    }],
+  "time": [
+    {
+      "startDate": "2022, 8, 17",
+      "endDate": "2022, 11, 30",
+      // "Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"
+      "weekDay": 3,
+      "hour": 19,
+      "minute": 47,
+      // duration in minutes
+      "duration": 1,
+      "titleTop": "Testseite für die Bachelorarbeit 2 no chat",
+      "title": "second",
+      "image": "assets/img/backgrounds/BHT-Kartenbild-middle.jpg",
+      "chat": false,
+      "customStyle": `
+        .textFieldTitle{ color: white; }
+        #playerSubtitle {
+            color: rgb(251 251 251 / 52%);
+          }
+        #error {
+          color: rgb(112 0 0);
+          }
+        #chat{
+          background-color: #000000a8;
+          }
+              `,
+      "partnerBox": [
+        {}],
+      "linkBox": [],
+      "textFields" : [
+        { "title": "<"
+        },
+        { "header": "",
+          "text": ""
+        },
+      ],
+    }
+  ]
 });

@@ -319,7 +319,7 @@ let sideBySideFunction = {
         player2.style.margin = "0";
         player2.style.borderRadius = "0";
 
-        document.getElementById("switch").style.display = "none";
+        toggleElementVisibility(document.getElementById("switch"));
     },
     /**
      * deactivate side by side
@@ -336,7 +336,7 @@ let sideBySideFunction = {
         player2.style.margin = "5px";
         player2.style.borderRadius = "10px";
 
-        document.getElementById("switch").style.display = "block";
+        toggleElementVisibility(document.getElementById("switch"));
     },
 
     /**

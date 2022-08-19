@@ -81,6 +81,7 @@ let toggleElementVisibility = function(element){
     } else buttonElement.style.display = "none";
 }
 
+
 /**
  * Simple logging function for objects
  * @param e function to be logged
