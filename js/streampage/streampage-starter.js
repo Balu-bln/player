@@ -51,18 +51,16 @@ function initiateNanoplayers() {
     let streamDivs = [];
 
     //TODO FUTURE : one html div with playerdiv and javascript interates thru streamconfig and create a
-    // corresponding number of streams meantioned in the entries array
+    // corresponding number of streams mentioned in the entries array
     while (document.getElementById("playerDiv" + counter) != null){
         streamDivs.push(document.getElementById("playerDiv" + counter));
         counter++;
     }
 
-    console.log("initiate final")
     streamDivs.forEach(function (div){
         console.log(div)
         startNanoPlayer(div, channel);
     })
-
 }
 
 /**
@@ -72,7 +70,7 @@ function initiateNanoplayers() {
  * @param channel channel name
  * @returns {number} -1 if no stream was found
  */
-function startNanoPlayer (playerDiv, channel) {
+function startNanoPlayer(playerDiv, channel) {
     let stream;
 
     // find stream by index

@@ -96,8 +96,6 @@ let nanocosmosBugfix = function () {
     observer.observe(document.getElementById("playerDiv2"), {
         attributes: true
     })
-
-
 }
 
 /**
