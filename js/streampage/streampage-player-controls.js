@@ -12,7 +12,6 @@
 let secondPlayerPosition = "bottomRight";
 
 let sideBySide = false;
-let clickSideBySide = false;
 
 let timerStack = {};
 
@@ -67,8 +66,9 @@ let initPlayerControls = function () {
     }
 
     document.getElementById("halfScreen").onclick = function () {
-        clickSideBySide = true;
+        sideBySide = !sideBySide
         sideBySideFunction.changeSideBySide();
+
     }
 
     document.getElementById("changePosition").onclick = function () {
@@ -89,8 +89,13 @@ let nanocosmosBugfix = function () {
     // Nanocosmos player changes the attributes of the second(mini) player after fullscreen event is fired
     let observer = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutations) {
-            if(!sideBySide) rotatePlayerTwoAlignment.refresh();
-            sideBySideFunction.checkSideBySide();
+            if(!sideBySide) {
+                rotatePlayerTwoAlignment.refresh();
+            }
+            else {
+                sideBySideFunction.checkSideBySide();
+            }
+            console.log(sideBySide)
         })
     });
     observer.observe(document.getElementById("playerDiv2"), {
@@ -270,7 +275,6 @@ let rotatePlayerTwoAlignment = {
 let switchPlayerPosition = function () {
 
     //TODO NOT suitable for more than 2 players
-
     let videoOneElement = document.getElementById("h5live-playerDiv1");
     let videoTwoElement = document.getElementById("h5live-playerDiv2");
 
@@ -290,11 +294,13 @@ let sideBySideFunction = {
      *  change the side by side mode (ON/OFF)
      */
     changeSideBySide: function () {
-        if (!sideBySide) {
+        if (sideBySide) {
+            console.log("Side by side on")
             this.sideBySideOn();
             document.getElementById("halfScreen").style.backgroundColor = "grey" ;
 
         } else {
+            console.log("Side by side off")
             this.sideBySideOff();
             document.getElementById("halfScreen").style.backgroundColor = null ;
         }
@@ -307,7 +313,7 @@ let sideBySideFunction = {
         let player = document.getElementById("playerDiv1");
         let player2 = document.getElementById("playerDiv2");
 
-        sideBySide = true;
+
         player.style.width = "50%";
 
         player2.style.width = "50%";
@@ -317,7 +323,11 @@ let sideBySideFunction = {
         player2.style.margin = "0";
         player2.style.borderRadius = "0";
 
-        toggleElementVisibility(document.getElementById("switch"));
+        console.log("setting side by side true")
+
+        if (document.getElementById("switch").style.display !== "none"){
+            toggleElementVisibility(document.getElementById("switch"));
+        }
     },
     /**
      * deactivate side by side
@@ -326,7 +336,6 @@ let sideBySideFunction = {
         let player = document.getElementById("playerDiv1");
         let player2 = document.getElementById("playerDiv2");
 
-        sideBySide = false;
         player.style.width = "100%";
 
         player2.style.width = "30%";
@@ -334,7 +343,9 @@ let sideBySideFunction = {
         player2.style.margin = "5px";
         player2.style.borderRadius = "10px";
 
-        toggleElementVisibility(document.getElementById("switch"));
+        if (document.getElementById("switch").style.display === "none"){
+            toggleElementVisibility(document.getElementById("switch"));
+        }
     },
 
     /**

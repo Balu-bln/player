@@ -1,3 +1,11 @@
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ CSS Player configurations
++ In cooperation with the Berliner Hochschule für Technik (https://www.beuth-hochschule.de/)
++ and Nanocosmos Berlin (https://www.nanocosmos.de/)
++ Copyright (c) 2022 Julia Hoffmann (julia.h.design@gmail.com)
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/** Player  ********************************************/
 #player{
     flex: 1;
     display: flex;
@@ -53,23 +61,6 @@ video{
     margin:5px;
 }
 
-#middleView-playerDiv, #middleView-playerDiv2{
-    width: 96px;
-    height: 96px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-}
-
-#exclamationSign-playerDiv, #exclamationSign-playerDiv2{
-    width:96px;
-    height:96px;
-    z-index: 1001;
-}
-
 /** Player Controls ********************************************/
 .controls{
     stroke: #ffffff;
@@ -120,14 +111,6 @@ svg{
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: flex-start;
-}
-
-
-#play{
-    position: absolute;
-    visibility: visible;
-    fill: white;
-    z-index: 1;
 }
 
 #play-polygon{
@@ -201,10 +184,7 @@ svg{
     height: 100%;
 }
 
-/** ChangePosition controls / HalfScreen controls -------------------------------------*/
-#halfScreen{
-    border-radius: 10px;
-}
+/** Change Position controls / Half Screen controls -------------------------------------*/
 #changePosition-PlayerDiv{
     position: relative;
     display: flex;
@@ -212,6 +192,7 @@ svg{
     flex: 1;
     height: 100%;
 }
+
 #halfScreen-PlayerDiv{
     display: flex;
     position: relative;
@@ -220,12 +201,16 @@ svg{
     height: 100%;
 }
 
+#halfScreen{
+    border-radius: 10px;
+}
+
 .halfScreen-path{
     stroke-width: 0;
     fill: white;
 }
 
-/** fullScreen controls -------------------------------------*/
+/** Fullscreen controls -------------------------------------*/
 #fullscreen-PlayerDiv{
     position: relative;
     display: flex;
@@ -238,7 +223,7 @@ svg{
     stroke-width: 60;
 }
 
-/** Style from 900px ******************************************/
+/** Style changes ******************************************/
 @media screen and (max-width: 1650px)  {
 
     #player{

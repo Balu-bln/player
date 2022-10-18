@@ -50,7 +50,7 @@ function initiateNanoplayers() {
     let counter = 1;
     let streamDivs = [];
 
-    //TODO FUTURE : one html div with playerdiv and javascript interates thru streamconfig and create a
+    //TODO FUTURE : one html div with playerdiv and javascript iterate thru streamconfig and create a
     // corresponding number of streams mentioned in the entries array
     while (document.getElementById("playerDiv" + counter) != null){
         streamDivs.push(document.getElementById("playerDiv" + counter));

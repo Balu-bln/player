@@ -67,7 +67,7 @@ let setDescription = function (streamConfig){
  * @param streamConfig
  */
 let setDualPlayer = function (streamConfig){
-    if (streamConfig.dual === undefined){
+    if (streamConfig.dual === undefined || streamConfig.dual.length === 0){
         toggleElementVisibility(document.getElementById("playerDiv2"));
         toggleElementVisibility(document.getElementById("switch"));
         toggleElementVisibility(document.getElementById("changePosition"));
@@ -142,7 +142,7 @@ let setLinkBox = function (streamConfig){
  */
 let setPartnerBox = function (streamConfig){
 
-    if (streamConfig.partnerBox !== undefined && streamConfig.partnerBox) {
+    if (streamConfig.partnerBox !== undefined && streamConfig.partnerBox.length > 0  && streamConfig.partnerBox) {
         document.getElementById("partner-wrapper").style.display = "block";
     } else {
         document.getElementById("partner-wrapper").style.display = "none";
@@ -181,8 +181,7 @@ let setPartnerBox = function (streamConfig){
 let setTextFields = function (streamConfig){
     let textFieldDivs = document.getElementById("textField");
 
-
-    if (streamConfig.textFields !== undefined && streamConfig.textFields) {
+    if (streamConfig.textFields !== undefined && streamConfig.textFields.length > 1  &&streamConfig.textFields) {
 
         let textFieldTitleDiv = document.createElement("div");
         textFieldTitleDiv.className = "textFieldTitle";
@@ -231,6 +230,34 @@ let applyExtraStyle = function (streamConfig){
     }
 }
 
+/**
+ * Checks if the time object contains the actual date
+ * @param time the streamconfig object containing a times stream
+ * @returns {boolean} returns true if the streamconfig(time) contains the actual time
+ */
+let checkWeekDay = function (time){
+
+    if (time === undefined) {
+        return false;
+    }
+
+    // if it is a single stream
+    if (time.day !== undefined && localTime.getDate() === time.day) return true;
+
+    // if it is a recurring stream
+    if (time.weekDay !== undefined){
+        let weekday = time.weekDay.split(",")
+        if (weekday.includes(localTime.getDay() + "")){
+            return true;
+        }
+    }
+    return false;
+}
+
+/**
+ * Generates a valid Stream config for the current time
+ * @returns {{}} Streamconfig use from the nanoPlayer framework
+ */
 let generateStreamConfig = function (){
 
     console.log("generate stream config")
@@ -239,7 +266,6 @@ let generateStreamConfig = function (){
     let userStreamConfig = getStreamConfig(streamID);
 
     let computedStreamConfig = {};
-    //TODO detect time segment
 
     let timedStream;
 
@@ -251,14 +277,12 @@ let generateStreamConfig = function (){
             let startDate = new Date(time.startDate);
             let endDate = new Date(time.endDate);
 
-            //TODO hier weiter
-
             console.log(localTime)
             // stream is in timed stream timeframe
             if (localTime > startDate && localTime < endDate){
                 console.log("in timeframe")
                 // timed stream is on the actual day
-                if (time.weekDay !== undefined && time.weekDay === localTime.getDay() || localTime.getDate() === time.day){
+                if (checkWeekDay(time)){
                     // timed stream is in actual hour
 
                     let startTime = new Date(
@@ -278,7 +302,6 @@ let generateStreamConfig = function (){
             }
         })
     }
-
 
     if (timedStream === undefined) timedStream = {}
 
