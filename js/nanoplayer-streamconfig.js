@@ -107,6 +107,29 @@ streams.push({
   ]
 });
 
+// TEST Stream 03 --------------------------------------------------------------------------------------------------------------------------------------
+streams.push({
+  "tag": "test3",
+  "titleTop": "Veranstaltungstitel",
+  "title": "Untertitel",
+  "chat": true,
+  "entries": [
+    {
+      "streamname": "f125f602-3a14-4ff8-bb72-298de8c05b85", // high
+      "info": { "bitrate": 1200, "width": 1280, "height": 720, "framerate": 30 }
+    },
+    {
+      "streamname": "cae2a779-a6ed-4001-b823-356a73874205", // medium
+      "info": { "bitrate": 800, "width": 854, "height": 480, "framerate": 15 }
+    },
+    {
+      "streamname": "fa911661-f179-43d3-b7f6-62dca365fd33", // low
+      "info": { "bitrate": 400, "width": 640, "height": 360, "framerate": 15 }
+    }
+  ],
+  "dual": [],
+});
+
 /**
  * 2024 NOTFALLSITZUNG Hack -------------------------------------------------------------------------------------------------------------------------------------
  */
@@ -1094,7 +1117,6 @@ streams.push({
   "customStyle": `
             #playerDiv2 {
             background-color: BLUE;
-            position: fixed;
             }
             #titleSub {
             background-color: RED;
@@ -1122,33 +1144,8 @@ streams.push({
       "text": "Vortrag 03"
     },
   ],
-  "entries":/* [{ "streamname": "CD6oL-2kE1g" }] */[
-    {
-      "streamname": "RBJ00-6uALm", // high
-      "info": { "bitrate": 3000, "width": 1280, "height": 720, "framerate": 25 }
-    },
-    {
-      "streamname": "RBJ00-J0hGb", // medium
-      "info": { "bitrate": 1200, "width": 852, "height": 480, "framerate": 30 }
-    },
-    {
-      "streamname": "RBJ00-SS48m", // low
-      "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
-    }],
-  "dual": [
-    {
-      "streamname": "RBJ00-6uALm", // high
-      "info": { "bitrate": 3000, "width": 1280, "height": 720, "framerate": 25 }
-    },
-    {
-      "streamname": "RBJ00-J0hGb", // medium
-      "info": { "bitrate": 1200, "width": 852, "height": 480, "framerate": 30 }
-    },
-    {
-      "streamname": "RBJ00-SS48m", // low
-      "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
-    }],
-  "debug": false,
+  "entries": [{ "streamname": "CD6oL-2kE1g" }],
+  "dual": [{ "streamname": "CD6oL-2kE1g" }],
   "chat": true,
   "linkBox": [
     {

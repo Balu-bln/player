@@ -20,7 +20,7 @@ let timerStack = {};
  */
 let initializeControls = function () {
     initPlayerControls();
-    nanocosmosBugfix();
+    //nanocosmosBugfix();
 }
 
 /**
@@ -82,6 +82,7 @@ let initPlayerControls = function () {
 }
 
 /**
+ * depricated -> saved for maybe future usage
  * Some bugfixes for unexpected actions
  */
 let nanocosmosBugfix = function () {
