@@ -56,6 +56,9 @@ let initPlayerControls = function () {
         hideShowExitFullscreenButton();
         playerFullscreen();
     }
+    document.getElementById("chatOnOff").onclick = function () {
+        hideShowChat();
+    }
     document.getElementById("exitFullscreen").onclick = function () {
         playerExitFullscreen();
         hideShowFullscreenButton();
@@ -466,6 +469,13 @@ let hideShowFullscreenButton = function () {
  */
 let hideShowExitFullscreenButton = function () {
     toggleElementVisibility(document.getElementById("exitFullscreen"));
+}
+
+/**
+ * Switch between hide and show of the exit fullscreen button
+ */
+let hideShowChat = function () {
+    toggleElementVisibility(document.getElementById("chat"));
 }
 
 /**

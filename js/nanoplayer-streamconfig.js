@@ -1541,7 +1541,7 @@ streams.push({
   "titleTop": "Human-Computer Interaction",
   "title": "Lehrveranstaltung von Prof. Dr. Robert Strzebkowski",
   "image": "assets/img/backgrounds/NILO180318-GMS-BEUTH-3491.jpg",
-  "debug": false,
+  "debug": true,
   "chat": true,
   "customStyle": `
   .textFieldTitle{ color: white; }
@@ -1554,10 +1554,10 @@ streams.push({
   #chat{
     background-color: #000000a8;
     }
+    
             `,
-  /*"partnerBox": [
-    {}],*/
-  "linkBox": [],
+  //"partnerBox": [],
+  //"linkBox": [],
   /**"textFields" : [
     { "title": ""
     },
