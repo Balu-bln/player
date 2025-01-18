@@ -1,11 +1,80 @@
 
 // define ABR playback stream names
 // stream groups: each stream group has 3 ABR streams
+
+
+//TODO: Neue Anordnung der Streams -> neuester Stream nach oben / an den Anfang der Datei
+
 /**
  * The Streams and its custom styles bundled in an Array
  * @type {*[]}
  */
 let streams = [];
+
+/**
+ * STREAM ROHLING -------------------------------------------------------------------------------------------------------------------------------------
+ */
+streams.push({
+  "tag": "rohlingTag",
+  "titleTop": "Titel",
+  "title": "Untertitel",
+  "image": "/assets/img/background.jpg",
+  /**
+   *
+   "customStyle": `
+   #titleSub {
+            background-color: RED;
+            }`,
+   "partnerBox": [
+   {
+      "text": "MediaBox", // high
+      "image": "assets/img/logos/mediabox-small-logo.jpg",
+      "url": "https://www.bht-berlin.de/digitale-medien"
+    }],
+   "textFields" : [
+   { "title": "Titel"
+    },
+   { "header": "Information",
+      "text": "Beschreibung"
+    }
+   ],
+   "linkBox": [
+   {
+      "text": "Logobeschreibung", // high
+      "image": "/assets/beuthbox-logo.png",
+      "url": "1234"
+    }
+   ],
+   **/
+  "entries":/* [{ "streamname": "CD6oL-2kE1g" }] */[
+    {
+      "streamname": "RBJ00-...", // high
+      "info": { "bitrate": 3000, "width": 1280, "height": 720, "framerate": 25 }
+    },
+    {
+      "streamname": "RBJ00-...", // medium
+      "info": { "bitrate": 1200, "width": 852, "height": 480, "framerate": 30 }
+    },
+    {
+      "streamname": "RBJ00-...", // low
+      "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
+    }],
+  "dual": [
+    {
+      "streamname": "RBJ00-...", // high
+      "info": { "bitrate": 3000, "width": 1280, "height": 720, "framerate": 25 }
+    },
+    {
+      "streamname": "RBJ00-...", // medium
+      "info": { "bitrate": 1200, "width": 852, "height": 480, "framerate": 30 }
+    },
+    {
+      "streamname": "RBJ00-...", // low
+      "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
+    }],
+  "debug": false,
+  "chat": true
+});
 
 // TEST Stream 01 --------------------------------------------------------------------------------------------------------------------------------------
 streams.push({
@@ -37,6 +106,893 @@ streams.push({
     }
   ]
 });
+
+// TEST Stream 03 --------------------------------------------------------------------------------------------------------------------------------------
+streams.push({
+  "tag": "test3",
+  "titleTop": "Veranstaltungstitel",
+  "title": "Untertitel",
+  "chat": true,
+  "entries": [
+    {
+      "streamname": "f125f602-3a14-4ff8-bb72-298de8c05b85", // high
+      "info": { "bitrate": 1200, "width": 1280, "height": 720, "framerate": 30 }
+    },
+    {
+      "streamname": "cae2a779-a6ed-4001-b823-356a73874205", // medium
+      "info": { "bitrate": 800, "width": 854, "height": 480, "framerate": 15 }
+    },
+    {
+      "streamname": "fa911661-f179-43d3-b7f6-62dca365fd33", // low
+      "info": { "bitrate": 400, "width": 640, "height": 360, "framerate": 15 }
+    }
+  ],
+  "dual": [],
+});
+
+/**
+ * 2024 NOTFALLSITZUNG Hack -------------------------------------------------------------------------------------------------------------------------------------
+ */
+streams.push({
+  "tag": "notfallsitzung",
+  "titleTop": "Notfall-Stream Berliner Hochschule für Technik",
+  "title": "Wichtige Informationsveranstaltung",
+  "image": "",
+
+   "customStyle": `
+   #main {background-color: #212121;}
+   #titleTop { background-color: #a50000; color: rgb(253 253 253); }
+   #textField { background-color: none; }
+   .textBox_text{ height: 10em; font-size: larger; }
+
+            
+            
+   `,
+   "partnerBox": [
+   {
+      "text": "MediaBox", // high
+      "image": "assets/img/logos/mediabox-small-logo.jpg",
+      "url": "https://www.bht-berlin.de/digitale-medien"
+    }],
+  /**
+   *    *
+   "textFields" : [
+   { "title": ""
+    },
+   { "header": "Wichtige Informationen",
+      "text": "Aufgrund eines Sicherheitsvorfalls ist die Webseite der Berliner Hochschule für Technik (BHT) derzeit nicht erreichbar. Dies ist eine Informationsveranstaltung. <br> gez. De. Julia Neuhaus, Präsidentin BHT"
+    }
+   ],
+
+   "linkBox": [
+   {
+      "text": "Logobeschreibung", // high
+      "image": "/assets/beuthbox-logo.png",
+      "url": "1234"
+    }
+   ],
+   **/
+  "entries":/* [{ "streamname": "CD6oL-2kE1g" }] */[
+    {
+      "streamname": "RBJ00-u6XaI", // high
+      "info": { "bitrate": 3000, "width": 1280, "height": 720, "framerate": 25 }
+    },
+    {
+      "streamname": "RBJ00-V5han", // medium
+      "info": { "bitrate": 1200, "width": 852, "height": 480, "framerate": 30 }
+    },
+    {
+      "streamname": "RBJ00-LfCxt", // low
+      "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
+    }],
+  "dual": [],
+  "debug": false,
+  "chat": false
+});
+
+/**
+ * 2023 Harald Lesch Dual-------------------------------------------------------------------------------------------------------------------------------------
+ */
+streams.push({
+  "tag": "lesch",
+  "titleTop": "Klimawandel: verstehen und handeln",
+  "title": "Prof. Dr. Harald Lesch",
+  "image": "assets/img/backgrounds/2023Lesch/klima3.jpg",
+
+   "customStyle": `
+   #titleTop {  background-color: #a91100f0; 
+                color: white;
+                font-size: xx-large;}
+   #titleSub { color: #ffffffad; background-color: #4d0f0fbd; font-size: 18px; }             
+   #page, #header, #footer { background-color: #000000; }
+   #beuth-logo, #beuthbox-logo { filter: invert(100%); }
+   #footer a:hover{ color: white; }
+   #footer a { color: #00d0ff; }
+   #error   { display:none; }
+   #textField, .textBox { background-color: #00000000; }
+   
+   .linkButton { padding-left: 2em; padding-right: 2em; color: #ffffffad; background-color: #4d0f0fbd; font-size: 12px; }
+   .linkButton:last-child { background-color: #00000000; box-shadow: none; }
+   .textBox { max-width: 1080px; margin: 2em; }
+   .textFieldTitle { display: none; }
+   .textBox_text {  padding: 1em; border-bottom-right-radius: 1em;
+                    border-bottom-left-radius: 1em;  background-color: #ffffffd4;}
+   .textBox_header { padding: 1em; font-size: 18px; border-top-right-radius: 1em;
+                    border-top-left-radius: 1em; color:white; background-color: #c90000e6; }
+   .linkBoxImages { height: 4em; }
+   `,
+
+    /**
+     *
+   "partnerBox": [
+   {
+      "text": "MediaBox", // high
+      "image": "assets/img/logos/mediabox-small-logo.jpg",
+      "url": "https://www.bht-berlin.de/digitale-medien"
+    }],*/
+   "textFields" : [
+   { "title": ""
+    },
+   { "header": "7.7.2023 um 10-13 Uhr im Ingeborg-Meising-Saal an der BHT ",
+      "text": "Diese Veranstaltung richtet sich an Lehrkräfte und deren Schüler*innen an Berliner und Brandenburger Oberschulen.<br><br>" +
+          "Die Jugend von heute wird in der Zukunft alltäglich mit dem Klimawandel auseinandersetzen müssen. Nur wer die wissenschaftlichen Hintergründe versteht, " +
+          "kann überzeugend argumentieren und nachhaltig handeln. Die Schüler*innen erfahren, wie sie die Energiewende in Deutschland mitgestalten und realisieren können.<br><br>" +
+          "Prof. Dr. Harald Lesch eröffnet die Veranstaltung mit einem Vortrag zum Thema Klimawandel. Dr. Cecilia Scorza-Lesch stellt den Klimakoffer vor und zeigt die damit möglichen Experimente, die für den Unterricht konzipiert wurden.<br><br>"
+    }
+   ],
+   "linkBox": [
+   {
+      "text": "", // high
+      "image": "assets/img/logos/Instagram_logo_2022.svg.png",
+      "url": "https://www.instagram.com/p/CuG8UuXA1S9/?hl=de"
+    }
+   ],
+
+  "entries":/* [{ "streamname": "CD6oL-2kE1g" }] */[
+    {
+      "streamname": "RBJ00-Tz7pk", // high
+      "info": { "bitrate": 3000, "width": 1280, "height": 720, "framerate": 25 }
+    },
+    {
+      "streamname": "RBJ00-0jEJQ", // medium
+      "info": { "bitrate": 1200, "width": 852, "height": 480, "framerate": 30 }
+    },
+    {
+      "streamname": "RBJ00-MrrrX", // low
+      "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
+    }],
+  "dual": [
+    {
+      "streamname": "RBJ00-W6tPn", // high
+      "info": { "bitrate": 3000, "width": 1280, "height": 720, "framerate": 25 }
+    },
+    {
+      "streamname": "RBJ00-J84o4", // medium
+      "info": { "bitrate": 1200, "width": 852, "height": 480, "framerate": 30 }
+    },
+    {
+      "streamname": "RBJ00-KJyxL", // low
+      "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
+    }],
+  "debug": false,
+  "chat": false
+});
+
+/**
+ * 2023 Harald Lesch Single -------------------------------------------------------------------------------------------------------------------------------------
+ */
+streams.push({
+  "tag": "harald.lesch",
+  "titleTop": "Klimawandel: verstehen und handeln",
+  "title": "Prof. Dr. Harald Lesch",
+  "image": "assets/img/backgrounds/2023Lesch/klima3.jpg",
+
+  "customStyle": `
+   #titleTop {  background-color: #a91100f0; 
+                color: white;
+                font-size: xx-large;}
+   #titleSub { color: #ffffffad; background-color: #4d0f0fbd; font-size: 18px; }             
+   #page, #header, #footer { background-color: #000000; }
+   #beuth-logo, #beuthbox-logo { filter: invert(100%); }
+   #footer a:hover{ color: white; }
+   #footer a { color: #00d0ff; }
+   #error   { display:none; }
+   #textField, .textBox { background-color: #00000000; }
+   
+   .linkButton { padding-left: 2em; padding-right: 2em; color: #ffffffad; background-color: #4d0f0fbd; font-size: 12px; }
+   .linkButton:last-child { background-color: #00000000; box-shadow: none; }
+   .textBox { max-width: 1080px; margin: 2em; }
+   .textFieldTitle { display: none; }
+   .textBox_text {  padding: 1em; border-bottom-right-radius: 1em;
+                    border-bottom-left-radius: 1em;  background-color: #ffffffd4;}
+   .textBox_header { padding: 1em; font-size: 18px; border-top-right-radius: 1em;
+                    border-top-left-radius: 1em; color:white; background-color: #c90000e6; }
+   .linkBoxImages { height: 4em; }
+   `,
+
+  /**
+   *
+   "partnerBox": [
+   {
+      "text": "MediaBox", // high
+      "image": "assets/img/logos/mediabox-small-logo.jpg",
+      "url": "https://www.bht-berlin.de/digitale-medien"
+    }],*/
+  "textFields" : [
+    { "title": ""
+    },
+    { "header": "7.7.2023 um 10-13 Uhr im Ingeborg-Meising-Saal an der BHT ",
+      "text": "Diese Veranstaltung richtet sich an Lehrkräfte und deren Schüler*innen an Berliner und Brandenburger Oberschulen.<br><br>" +
+          "Die Jugend von heute wird in der Zukunft alltäglich mit dem Klimawandel auseinandersetzen müssen. Nur wer die wissenschaftlichen Hintergründe versteht, " +
+          "kann überzeugend argumentieren und nachhaltig handeln. Die Schüler*innen erfahren, wie sie die Energiewende in Deutschland mitgestalten und realisieren können.<br><br>" +
+          "Prof. Dr. Harald Lesch eröffnet die Veranstaltung mit einem Vortrag zum Thema Klimawandel. Dr. Cecilia Scorza-Lesch stellt den Klimakoffer vor und zeigt die damit möglichen Experimente, die für den Unterricht konzipiert wurden.<br><br>"
+    }
+  ],
+  "linkBox": [
+    {
+      "text": "", // high
+      "image": "assets/img/logos/Instagram_logo_2022.svg.png",
+      "url": "https://www.instagram.com/p/CuG8UuXA1S9/?hl=de"
+    }
+  ],
+
+  "entries":/* [{ "streamname": "CD6oL-2kE1g" }] */[
+    {
+      "streamname": "RBJ00-Tz7pk", // high
+      "info": { "bitrate": 3000, "width": 1280, "height": 720, "framerate": 25 }
+    },
+    {
+      "streamname": "RBJ00-0jEJQ", // medium
+      "info": { "bitrate": 1200, "width": 852, "height": 480, "framerate": 30 }
+    },
+    {
+      "streamname": "RBJ00-MrrrX", // low
+      "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
+    }],
+  "debug": false,
+  "chat": false
+});
+
+/**
+ * 2023 Lange Nacht der Wissenschaften -------------------------------------------------------------------------------------------------------------------------------------
+ */
+streams.push({
+  "tag": "LNdW",
+  "titleTop": "Lange Nacht der Wissenschaften",
+  "title": "Übertragung aus dem Lehrfilmstudio",
+  "image": "assets/img/backgrounds/2023LNdW/LNdW01.JPG",
+  "customStyle": `
+      body {   font-family: BHT-Case; }
+      
+      body:after { 
+               position:absolute; 
+               width:0; 
+               height:0; 
+               overflow:hidden; 
+               z-index:-1; 
+               content:url(assets/img/backgrounds/2023LNdW/1lfs-normal.JPG) 
+               url(assets/img/backgrounds/2023LNdW/2lfs-white.JPG) 
+               url(assets/img/backgrounds/2023LNdW/3lfs-green.JPG) 
+               url(assets/img/backgrounds/2023LNdW/4lfs-green_blue.JPG) 
+               url(assets/img/backgrounds/2023LNdW/5lfs-blue.JPG) 
+               url(assets/img/backgrounds/2023LNdW/6lfs-blue_red.JPG) 
+               url(assets/img/backgrounds/2023LNdW/7lfs-red.JPG)
+               url(assets/img/backgrounds/2023LNdW/8lfs-red_green02.JPG);
+             }
+                   
+      #titleSub {
+            background-color: #213670ab;
+            font-family: BHT-Case;
+            font-size: 18px;
+            color: #ffffffc4;
+            }
+            
+      #titleTop { 
+            background-color: #000312;
+            font-family: BHT-CaseMicro;
+            color: white;
+            font-size: 24px
+              }
+      
+      #error   { display:none; }
+   
+      #main    {
+            -webkit-transition: fadeBackground 1800s  infinite;
+            -moz-animation: fadeBackground 1800s  infinite;
+            -o-animation: fadeBackground 1800s  infinite;
+            animation: fadeBackground 1800s  infinite;
+            }
+                   
+      @keyframes fadeBackground {
+            0%, 100%    { background-image: url("assets/img/backgrounds/2023LNdW/2lfs-white.JPG"); background-position: center; }
+            13%         { background-image: url("assets/img/backgrounds/2023LNdW/3lfs-green.JPG"); background-position: center; }
+            26%         { background-image: url("assets/img/backgrounds/2023LNdW/4lfs-green_blue.JPG"); background-position: left; }
+            39%         { background-image: url("assets/img/backgrounds/2023LNdW/5lfs-blue.JPG"); background-position: right; }
+            52%         { background-image: url("assets/img/backgrounds/2023LNdW/6lfs-blue_red.JPG"); background-position: center; }
+            75%         { background-image: url("assets/img/backgrounds/2023LNdW/7lfs-red.JPG"); background-position: left; }
+            88%         { background-image: url("assets/img/backgrounds/2023LNdW/8lfs-red_green02.JPG"); background-position: right; }
+            }
+          
+          @keyframes slide-in {
+          from {
+            transform: translateX(-100%);
+          }
+          to {
+             transform: translateX(0%);
+          }
+      }    
+             
+      @media screen and (min-width:1400px) {
+            #main{ background-size: 120%; }
+            }
+            
+      
+      body, #page, #header, #footer{
+            background-color: black;
+      }
+      
+      #header img, #partner-box a img{
+           filter: invert(100%);
+      }
+      
+      #footer{ 
+            background-image: url("assets/img/backgrounds/sternenhimmel.jpg"); 
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-size: 11px;
+      }
+      
+      .partnerBoxImages {
+            height: 3em;
+      }
+      
+      .textFieldTitle {
+            flex: 0;
+            font-size: 21px;
+            color: white;
+            margin-bottom: 15px;
+      }
+      
+      #textField{
+            width: 90%;
+            border-radius: 10px;
+            max-width: 1080px;
+      }
+      .textFieldContent{
+            flex: auto;
+            width: 99%;
+            height: 200px;
+            text-wrap: balance;
+            flex-direction: row;
+            flex-wrap: wrap;
+            overflow-y: scroll;
+            justify-content: space-between;
+      }
+      
+      
+      .textFieldContent::-webkit-scrollbar{
+            width: 0.5em;
+            background-color:  #000b1200;
+      }
+      
+      .textFieldContent::-webkit-scrollbar-thumb{
+            background-color:  #a7a7a7a3;
+            max-width: 10px;
+            border-radius: 10px;
+      }
+      
+      .textFieldContent::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+      box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+      border-radius: 10px;
+      }
+      
+      .textBox_header{ 
+            background-color: #00000000; 
+            color: #ff8f00;
+            font-style: normal;
+      }
+      
+      .textBox{
+            opacity: 0.9;
+            max-width: 250px;
+            min-width: 200px;
+            background-color: #00022bba;
+            border-style: solid;
+            border-color: #2b00ad61; 
+      }
+      
+      .textBox:first-child{
+            border-style: solid;
+            border-color: #1bff00;
+            background-color: #1bff0085;
+            color: #25ff00;
+      }
+      
+      .textBox:first-child .textBox_header, .textBox:last-child .textBox_header{
+            color: white;
+      }
+      
+      .textBox:first-child .textBox_text{
+            color: #434343;
+            background-color: #0aff1199;
+      }
+      
+      .textBox:last-child{
+            border-style: solid;
+            border-color: #ff0000;
+            background-color: #ff0000b5;
+            color: #ff0000;
+      }
+      
+      .textBox:last-child .textBox_text{
+            color: #434343;
+            background-color: #ff00008f;
+      }
+      
+      .textBox:hover{
+            opacity: 1;
+      }
+      
+      .textBox_text{
+            background-color: #06007973;
+            border-radius: 5px;
+            min-height: 80px;
+            text-align: center;
+            justify-content: center;
+            color: #8fbbff;
+            margin: 4px;
+      }
+      .textBox_text a, .textBox_text a:visited, .textBox_text a:active{
+            color: #fbff02;
+      }
+      .textBox_text a:hover{
+            color: #8ffb00;
+      }
+      
+      .linkButton{
+            color: rgb(189 187 187);
+      }
+      
+      #partner-box a{ background-color: black; }
+      .linkButton{ background-color: #000b12b3; }
+      a:link { color: #d5d5d5;}
+      a:hover{ color: #0092ff; }
+}
+            `,
+  "partnerBox": [
+    {
+      "text": "MediaBox", // high
+      "image": "assets/img/logos/mediabox-small-logo.jpg",
+      "url": "https://www.bht-berlin.de/digitale-medien"
+    },
+    {
+      "text": "LNdW", // high
+      "image": "assets/img/logos/lndw_logo_N8_weiß.jpg",
+      "url": "https://www.bht-berlin.de/lndw"
+    }],
+  "textFields" : [
+    { "title": "Programm am 17.06.23 von 17:00 bis 00:00 Uhr"
+    },
+    { "header": "<p style=''>17:00</p>&nbsp; - &nbsp;Start",
+      "text": "Die Tore des LFS werden geöffnet"
+    },
+    { "header": "17:30 - Begrüßung",
+      "text": "Prof. Dr. Strzebkowski & Herr Antoniazzi"
+    },
+    { "header": "17:40 - Einblick",
+      "text": "Lassen Sie sich von Uns hinter die Kulissen führen"
+    },
+    { "header": "18:00 - &nbsp;<p style='color:white;'>Interview</p>",
+          "text": "Prof. Dr. Sven Tschirley"
+    },
+    { "header": "18:30 - &nbsp;<p style='color:white;'>Interview</p>",
+      "text": "Prof. Dr-Ing. Ivo Boblan"
+    },
+    { "header": "18:45 - &nbsp;<p style='color:white;'>Interview</p>",
+          "text": "Dipl.-Ing. Tasso Mulzer"
+    },
+    { "header": "19:00 - &nbsp;<p style='color:white;'>Interview</p>",
+      "text": "Prof. Dipl.-Kfm. Kai Kummert"
+    },
+    { "header": "19:20 - &nbsp;<p style='color:white;'>Interview</p>",
+      "text": "Erik Bussek"
+    },
+    { "header": "19:30 - &nbsp;<p style='color:white;'>Interview</p>",
+          "text": "Prof. Dr. Ilona Buchem"
+    },
+    { "header": "20:00 - &nbsp;<p style='color:white;'>Interview</p>",
+      "text": "Ralf Zehr & Frau - RBB 88.8"
+    },
+    { "header": "20:20 - &nbsp;<p style='color:white;'>Interview</p>",
+          "text": "Dr. Justinus Pieper"
+    },
+    { "header": "20:35 - MOLLY",
+      "text": "<a href='https://player.bht-media.de/index.html?channel=molly' target='_blank'>Lecture Streaming & Recording - Dual View Base</a>"
+    },
+    { "header": "21:00 - &nbsp;<p style='color:white;'>Interview</p>",
+      "text": "Elli Strauven-Dejean & Alexander Götz"
+    },
+    { "header": "21:15 - &nbsp;<p style='color:white;'>Interview</p>",
+      "text": "Mustafa Tevik Lafci"
+    },
+    { "header": "21:30 - &nbsp;<p style='color:white;'>Interview</p>",
+          "text": "Rainer Kirchknopf - ZDF"
+    },
+    { "header": "21:45 - &nbsp;<p style='color:white;'>Interview</p>",
+          "text": "Marie Hennings"
+    },
+    { "header": "22:00 - &nbsp;<p style='color:white;'>Interview</p>",
+          "text": "Friederike Fröbel"
+    },
+    { "header": "22:15 - &nbsp;<p style='color:white;'>Interview</p>",
+          "text": "Prof. Dr. Steffen Prowe"
+    },
+    { "header": "22:30 - &nbsp;<p style='color:white;'>Interview</p>",
+          "text": "Prof. Dr. Florian Schindler & Wolfgang Hahn"
+    },
+    { "header": "22:50 - &nbsp;<p style='color:white;'>Interview</p>",
+          "text": "Lukas Runge"
+    },
+    { "header": "23:20 - Resüme",
+      "text": "Eine Zusammenfassung des Tages"
+    },
+    { "header": "23:40 - Abschied",
+      "text": "Abmoderation des Events"
+    },
+    { "header": "00:00 - Ende",
+      "text": "Das LFS geht ins Wochenende"
+    },
+  ],
+  "linkBox": [
+    {
+      "text": "Lange Nacht der Wissenschaften", // high
+      "image": "",
+      "url": "https://www.bht-berlin.de/lndw"
+    }
+  ],
+  "entries":/* [{ "streamname": "CD6oL-2kE1g" }] */[
+    {
+      "streamname": "RBJ00-3sPIU", // high
+      "info": { "bitrate": 3000, "width": 1280, "height": 720, "framerate": 25 }
+    },
+    {
+      "streamname": "RBJ00-ROGTG", // medium
+      "info": { "bitrate": 1200, "width": 852, "height": 480, "framerate": 30 }
+    },
+    {
+      "streamname": "RBJ00-jlDHW", // low
+      "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
+    }],
+  /**"dual": [
+    {
+      "streamname": "RBJ00-KYRaA", // high
+      "info": { "bitrate": 3000, "width": 1280, "height": 720, "framerate": 25 }
+    },
+    {
+      "streamname": "RBJ00-rKCGN", // medium
+      "info": { "bitrate": 1200, "width": 852, "height": 480, "framerate": 30 }
+    },
+    {
+      "streamname": "RBJ00-1Yiz9", // low
+      "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
+    }],*/
+  "debug": false,
+  "chat": false
+});
+
+/**
+ * 2023 Molly -------------------------------------------------------------------------------------------------------------------------------------
+ */
+streams.push({
+  "tag": "molly",
+  "titleTop": "Molly Live Stream aus dem LFS",
+  "title": "Dies ist ein Live Stream vom Molly",
+  "image": "assets/img/backgrounds/2023Molly/MollyBoxSmall.jpg",
+
+   "customStyle": `
+   
+   #error   { display:none; }
+   
+   -.linkButton:first-child{
+        content: image-set("assets/img/logos/mediabox-big-logo.jpg");
+        height: 90%;
+   }
+   #footer{ font-size: 11px; }
+       
+   `,
+
+   /**
+   *
+   "partnerBox": [
+   {
+      "text": "MediaBox", // high
+      "image": "assets/img/logos/mediabox-small-logo.jpg",
+      "url": "https://www.bht-berlin.de/digitale-medien"
+    }],
+   "textFields" : [
+   { "title": "Titel"
+    },
+   { "header": "Information",
+      "text": "Beschreibung"
+    }
+   ],**/
+   "linkBox": [
+   {
+      "text": "Lange Nacht der Wissenschaften", // high
+      "image": "",
+      "url": ""
+    }
+   ],
+
+  "entries":[
+    {
+      "streamname": "RBJ00-i5uCR", // high
+      "info": { "bitrate": 3000, "width": 1280, "height": 720, "framerate": 25 }
+    },
+    {
+      "streamname": "RBJ00-5aQej", // medium
+      "info": { "bitrate": 1200, "width": 852, "height": 480, "framerate": 30 }
+    },
+    {
+      "streamname": "RBJ00-QrSgT", // low
+      "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
+    }],
+  "dual": [
+    {
+      "streamname": "RBJ00-YgamN", // high
+      "info": { "bitrate": 3000, "width": 1280, "height": 720, "framerate": 25 }
+    },
+    {
+      "streamname": "RBJ00-fQIbc", // medium
+      "info": { "bitrate": 1200, "width": 852, "height": 480, "framerate": 30 }
+    },
+    {
+      "streamname": "RBJ00-wZs7g", // low
+      "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
+    }],
+  "debug": false,
+  "chat": false
+});
+
+/**
+ * 2023.4.29 Vorstellung Kandidaten Präsidium -------------------------------------------------------------------------------------------------------------------------------------
+ */
+streams.push({
+  "tag": "praesidium",
+  "titleTop": "Wahlen zum Präsidium der Berliner Hochschule für Technik",
+  "title": "in der Akademischen Versammlung am 13 Juli 2023",
+  "image": "assets/img/backgrounds/2023praesidium.jpg",
+  "debug": false,
+  "chat": false,
+  "customStyle": `
+            #textField {
+              flex-wrap: wrap;
+              min-width: 50px;
+              width: 80%;
+              max-width: 1020px;
+              background-color: #ffffffe3;
+              border-radius: 10px;
+              padding-bottom: 20px;
+            }
+            
+            #footer{
+              font-size: 0.70em;
+            }
+            
+            .textFieldContent {
+            flex: auto;
+              width: 99%;
+              text-wrap: balance;
+              flex-direction: row;
+              flex-wrap: wrap;
+              overflow-y: auto;
+              justify-content: center;
+            }
+    
+            .textBox {
+              display: flex;
+              flex-direction: column;
+              background-color: rgb(255 255 255 / 0%);
+              min-width: 150px;
+              max-width: 150px;
+            }
+            
+            .textBox_header{
+              padding: 0;
+            }
+            
+            .textBox_header img{
+              width: 100%;
+              height: auto;
+              border-top-right-radius: 10px;
+              border-top-left-radius: 10px;
+            }
+            
+            .textBox_text{
+              display: flex;
+              justify-content: flex-start;
+              background-color: #0089ff40;
+              height: 70px;
+              border-bottom-right-radius: 10px;
+              border-bottom-left-radius: 10px;
+              flex-direction: column;
+            }
+            
+            .textBox_text h6{
+            padding-bottom: 5px;
+            }
+            
+            .linkButton {
+              background-color: #ffffffe3;
+            }
+            
+            `,
+  /*"partnerBox": [
+    {
+      "image":"",
+      "url": ""
+    }],*/
+  "linkBox": [
+    {
+      "text": "BHT Präsidium",
+      "image": "",
+      "url": "https://www.bht-berlin.de/praesidium"
+    },
+    {
+      "text": "BHT Zentraler Wahlvorstand",
+      "image": "",
+      "url": "https://www.bht-berlin.de/zwv"
+    }],
+
+  "textFields" : [
+    { "title": "Kandidaten für die Wahl zum Präsidium"
+    },
+    { "header": "<img src='assets/img/foto/2023wahl/christine-edmaier.jpg'>",
+      "text": "<h6>Präsident</h6> <p>Christine Edmaier</p>"
+    },
+    { "header": "<img src='assets/img/foto/2023wahl/Dr-Julia-Neuhaus.jpg'>",
+      "text": "<h6>Präsident</h6> <p>Dr. Julia Neuhaus</p>"
+    },
+    { "header": "<img src='assets/img/foto/2023wahl/wolfgang-Kesseler.jpg'>",
+      "text": "<h6>Präsident</h6> <p>Prof. Dr. Wolfgang Kessler</p>"
+    },{ "header": "<img src='assets/img/foto/2023wahl/prof-dr-rainer-schneider.jpg'>",
+      "text": "<h6>1 Vizepräsident</h6> <p>Prof. Dr. Reiner Schneider</p>"
+    },
+    { "header": "<img src='assets/img/foto/2023wahl/ripphausen-lipa.jpg'>",
+      "text": "<h6>weiterer Vizepräsident</h6> <p>Prof. Dr. Heike Ripphausen-Lipa</p>"
+    },
+    { "header": "<img src='assets/img/foto/2023wahl/Joachim-Villwock.jpg'>",
+      "text": "<h6>weiterer Vizepräsident</h6> <p>Prof. Dr. Joachim Villwock</p>"
+    },
+  ],
+
+  "entries":/* [{ "streamname": "CD6oL-2kE1g" }] */[
+    {
+      "streamname": "RBJ00-2tr1O", // high
+      "info": { "bitrate": 3000, "width": 1280, "height": 720, "framerate": 25 }
+    },
+    {
+      "streamname": "RBJ00-ADvhZ", // medium
+      "info": { "bitrate": 1200, "width": 852, "height": 480, "framerate": 30 }
+    },
+    {
+      "streamname": "RBJ00-Uym1S", // low
+      "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
+    }],
+  "dual": [
+    {
+      "streamname": "RBJ00-oG8Fp", // high
+      "info": { "bitrate": 3000, "width": 1280, "height": 720, "framerate": 25 }
+    },
+    {
+      "streamname": "RBJ00-jCPsT", // medium
+      "info": { "bitrate": 1200, "width": 852, "height": 480, "framerate": 30 }
+    },
+    {
+      "streamname": "RBJ00-l6Au6", // low
+      "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
+    }],
+});
+
+/**
+ * 2023.3.30 Augenoptiker Event -------------------------------------------------------------------------------------------------------------------------------------
+ */
+streams.push({
+  "tag": "augenoptik",
+  "titleTop": "Jahreshauptversammlung 2023",
+  "title": "Förderverein Augenoptiker/ Optometrie der Berliner Hochschule für Technik e.V.",
+  "image": "assets/img/backgrounds/2023-Augenoptiker-Hintergrund02.jpg",
+  "debug": false,
+  "chat": false,
+  /*"partnerBox": [
+    {
+      "image":"",
+      "url": ""
+    }],*/
+  "linkBox": [
+    {
+      "text": "Studiengang Augenoptik/Optometrie",
+      "image": "",
+      "url": "https://studiengang.bht-berlin.de/ao/"
+    }],
+  "entries":/* [{ "streamname": "CD6oL-2kE1g" }] */[
+    {
+      "streamname": "RBJ00-2tr1O", // high
+      "info": { "bitrate": 3000, "width": 1280, "height": 720, "framerate": 25 }
+    },
+    {
+      "streamname": "RBJ00-ADvhZ", // medium
+      "info": { "bitrate": 1200, "width": 852, "height": 480, "framerate": 30 }
+    },
+    {
+      "streamname": "RBJ00-Uym1S", // low
+      "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
+    }],
+  "dual": [
+    {
+      "streamname": "RBJ00-oG8Fp", // high
+      "info": { "bitrate": 3000, "width": 1280, "height": 720, "framerate": 25 }
+    },
+    {
+      "streamname": "RBJ00-jCPsT", // medium
+      "info": { "bitrate": 1200, "width": 852, "height": 480, "framerate": 30 }
+    },
+    {
+      "streamname": "RBJ00-l6Au6", // low
+      "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
+    }],
+});
+
+/**
+ * 11.02.2023 Facility Management D352L -------------------------------------------------------------------------------------------------------------------------------------
+ */
+streams.push({
+  "tag": "facility-management",
+  "titleTop": "Facility Management",
+  "title": "Eine Vorlesung aus dem Raum D352L",
+  "image": "assets/img/backgrounds/klassenraum01.jpg",
+  "debug": false,
+  "chat": false,
+  /*"partnerBox": [
+    {
+      "image":"",
+      "url": ""
+    }],*/
+  "linkBox": [
+    {
+      "text": "Labor Facility Management",
+      "image": "",
+      "url": "https://www.bht-berlin.de/labor/detail/FAMA"
+    }],
+  "entries":/* [{ "streamname": "CD6oL-2kE1g" }] */[
+    {
+      "streamname": "RBJ00-xJiR4", // high
+      "info": { "bitrate": 3000, "width": 1280, "height": 720, "framerate": 25 }
+    },
+    {
+      "streamname": "RBJ00-A9diN", // medium
+      "info": { "bitrate": 1200, "width": 852, "height": 480, "framerate": 30 }
+    },
+    {
+      "streamname": "RBJ00-L4sfD", // low
+      "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
+    }],
+  "dual": [
+    {
+      "streamname": "RBJ00-PWL86", // high
+      "info": { "bitrate": 3000, "width": 1280, "height": 720, "framerate": 25 }
+    },
+    {
+      "streamname": "RBJ00-tGb8N", // medium
+      "info": { "bitrate": 1200, "width": 852, "height": 480, "framerate": 30 }
+    },
+    {
+      "streamname": "RBJ00-ZdLZ2", // low
+      "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
+    }],
+});
+
 
 // BHT Personalversammlung (TODO Wird dies noch benutzt???) --------------------------------------------------------------------------------------------------------------------------------------
 streams.push({
@@ -161,7 +1117,6 @@ streams.push({
   "customStyle": `
             #playerDiv2 {
             background-color: BLUE;
-            position: fixed;
             }
             #titleSub {
             background-color: RED;
@@ -189,33 +1144,8 @@ streams.push({
       "text": "Vortrag 03"
     },
   ],
-  "entries":/* [{ "streamname": "CD6oL-2kE1g" }] */[
-    {
-      "streamname": "RBJ00-6uALm", // high
-      "info": { "bitrate": 3000, "width": 1280, "height": 720, "framerate": 25 }
-    },
-    {
-      "streamname": "RBJ00-J0hGb", // medium
-      "info": { "bitrate": 1200, "width": 852, "height": 480, "framerate": 30 }
-    },
-    {
-      "streamname": "RBJ00-SS48m", // low
-      "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
-    }],
-  "dual": [
-    {
-      "streamname": "RBJ00-6uALm", // high
-      "info": { "bitrate": 3000, "width": 1280, "height": 720, "framerate": 25 }
-    },
-    {
-      "streamname": "RBJ00-J0hGb", // medium
-      "info": { "bitrate": 1200, "width": 852, "height": 480, "framerate": 30 }
-    },
-    {
-      "streamname": "RBJ00-SS48m", // low
-      "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
-    }],
-  "debug": false,
+  "entries": [{ "streamname": "CD6oL-2kE1g" }],
+  "dual": [{ "streamname": "CD6oL-2kE1g" }],
   "chat": true,
   "linkBox": [
     {
@@ -751,7 +1681,7 @@ streams.push({
    { "text": "Zentrum für Forschung und Innovation",
       "image": "",
       "url": "https://www.bht-berlin.de/zfi"
-    }],
+    }],/**
   "textFields" : [
     { "title": "BHT Young Scientist Minds (10:00 - 11:00 Uhr) - Organisation: Dr. Stefanie Blankenburg (ZFI)"
     },
@@ -793,7 +1723,7 @@ streams.push({
     {
       "streamname": "RBJ00-l6Au6", // low
       "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
-    }],
+    }],*/
 });
 
 // BHT FabLab Stream (24.05.2022) ------------------------------------------------------------------------------------------------------------
@@ -897,7 +1827,7 @@ streams.push({
     }],
 });
 
-// ---- Lange Nacht der Wissenschaften ----------------------------------------------------------------------------------------------------
+// ---- 2022 Lange Nacht der Wissenschaften ----------------------------------------------------------------------------------------------------
 streams.push({
 "tag": "lndw-2022",
   "titleTop": "Lange Nacht der Wissenschaften",
@@ -1260,6 +2190,510 @@ streams.push({
       "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
     }],
 });
+
+
+/**
+ * Stream Star Trek Vorlesung ------------------------------------------------------------------------------------------
+ */
+streams.push({
+  "tag": "startrek",
+  "titleTop": "12. Intergalaktische Gastvorlesung",
+  "title": "Wissenschaft und Science-Fiction mit Captain Zitt",
+  "image": "",
+  "debug": false,
+  "chat": false,
+  "customStyle": `
+  
+  body, #footer{ background-color: #00000075 }
+  
+  #header{ 
+  background-color: black;
+  height: 70px;
+  margin: 0;
+  }
+  
+  #beuth-logo {
+    padding: 12px;
+}
+
+  #footer{
+    font-family: 'Impact', serif;
+    letter-spacing: 0.05em;
+    font-size: 12px;
+  }
+  
+  #footer a{
+    color: #9795fb;
+  }
+  #footer a:hover {
+    color: red;
+  }
+  #footer a:visited {
+  color: #ed9692;
+  }
+  #titleTop{
+    font-family: 'Startrekfuture', serif;
+    font-size: 60px;
+    margin-left: 1.3em;
+    padding-right: 1.3em;
+    border-top-left-radius: 20px;
+    background-color: #00000000;
+    color: white;
+  }
+  #titleSub{
+    font-family: 'Sterilict', serif;
+    color: black;
+    font-style: italic;
+    background-color: rgb(204 204 254);
+    margin-top: 0.3em;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+  }
+  
+  #subBackground{
+  padding-bottom: 0px;
+  width: auto;
+  }
+  
+  #playerSubtitle {
+    display:none;
+    }
+  
+  #contentBox{
+    width: 100%;
+  }
+  #content{ 
+    width: 80%;
+  }
+  
+  #contentPlayer{
+     margin-top: 1em;
+     margin-bottom: 1em;
+  }
+  
+  #linkBox{
+  display: none; 
+  }
+  
+  .linkButton{
+    background-color:#ff000000;
+  }
+  .linkButton img {
+    height: 200px;
+  }
+  #partner-title{
+    color: #ff000000 !importent;
+  }
+  
+  body{
+    font-family: 'Sterilict', serif;
+  }
+  
+  #beuth-logo, #beuthbox-logo{
+     -webkit-filter: invert(1);
+    filter: invert(1);
+  }
+ 
+  
+  #textField{
+    width: 90%;
+    display: block;
+    background-color: #00000000;
+  }
+  
+  #h5live-playerDiv1{
+    background: black url("assets/img/startrek/offline1.jpg") ;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+  
+  #main{ background-color: #00000000; }
+  
+  #page{ position: absolute; }
+  
+  /* MENU -----------------------------------------*/
+  .textBox{
+    Display: flex;
+    font-family: "Impact", sans-serif;
+    text-transform: uppercase;
+    margin: 10px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: stretch;
+  }
+  
+  .textBox:first-child{
+    padding:0;
+    font-size: 1.5em;
+    align-items: flex-end;
+    border-bottom-left-radius: 5em;
+    border-top-left-radius: 5em;
+    background-color: #98ccfe;
+  }
+  
+  .textBox:first-child .textBox_text{
+    text-align: right;
+  }
+  
+  .textBox .textBox_header{
+    display: none;
+    
+  }
+  .textBox:nth-child(2), .textBox:nth-child(5){
+    background-color: #6598fe;
+    border-radius: 0;
+    flex: initial;
+    writing-mode: vertical-rl;
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    align-items: flex-end;
+  }
+  
+  
+  .textBox:nth-child(3){
+    margin-right: 0;
+    flex-direction: column;
+    background-color: yellow;
+    background-color: #f0f8ff00;
+  }
+  
+  .textBox:nth-child(3) .textBox_text{
+    text-align: right;
+    letter-spacing: 0.2em;
+    color: white;
+  }
+  
+  .textBox:nth-child(4){
+    flex-direction: column;
+    background-color: #00000000;
+  }
+  
+  .textBox:nth-child(4) a{
+    text-decoration: none;
+    letter-spacing: 0.2em;
+    font-size: 1em;
+    font-style: normal;
+    color: #fd9800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .textBox:nth-child(4) .textBox_header:hover, .textBox:nth-child(4) .textBox_text:hover{
+    background-color: red;
+  }
+    
+  .textBox:nth-child(4) .textBox_header{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    background-color: #ffea9f;
+    border-radius: 0;
+    flex: 1;
+    margin-bottom: 0.5em;
+  }
+
+  .textBox:nth-child(4) .textBox_text{
+    background-color: #fd9800;
+    flex-direction: column;
+    flex: 1;
+    margin-top: 0.5em;
+  }
+  
+  .textBox:nth-child(4) .textBox_text a{
+    display: flex;
+    color: #ffea9f;
+  }
+  
+  .textBox:last-child{
+    background-color: #336799;
+    border-bottom-right-radius: 5em;
+    border-top-right-radius: 5em;
+    align-items: flex-start;
+    font-size: 1.5em;
+  }
+  
+  .textBox:last-child .textBox_text{
+    text-align:left;
+  }
+  
+  
+  .textFieldTitle {
+  flex: 0.4;
+  padding-top: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  }
+  
+  .textFieldContent{
+    overflow: inherit;
+    overflow-x: inherit;
+    flex: 0;
+  }
+/* Partnerbox ---------------------------------------------------*/
+  
+  #partner-title {
+    display: none;
+}
+  
+/* Scroll Text Animation ---------------------------------------------------*/
+  #scroll-text {
+  max-width: 988px;
+  color: white;
+  margin-bottom: 2em;
+  margin-top: 0.5em;
+  text-align: center;
+  letter-spacing: 0.15em;
+}
+/* Background Animation -------------------------------------------------- */
+@keyframes move-background {
+    0% {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+    50% {
+        -webkit-transform: translate3d(500px, 0px, 500px);
+    }
+    100% {
+        -webkit-transform: translate3d(1000px, 0px, 1000px);
+    }
+}
+@-webkit-keyframes move-background {
+    0% {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+    50% {
+        -webkit-transform: translate3d(500px, 0px, 500px);
+    }
+    100% {
+        -webkit-transform: translate3d(1000px, 0px, 1000px);
+    }
+}
+@-moz-keyframes move-background {
+    0% {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+    50% {
+        -webkit-transform: translate3d(500px, 0px, 500px);
+    }
+    100% {
+        -webkit-transform: translate3d(1000px, 0px, 1000px);
+    }
+}
+@-webkit-keyframes move-background {
+    0% {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+    50% {
+        -webkit-transform: translate3d(500px, 0px, 500px);
+    }
+    100% {
+        -webkit-transform: translate3d(1000px, 0px, 1000px);
+    }
+}
+
+@keyframes star {
+    0% {opacity: 0.7; }
+    80% {opacity: 0;}
+    100% { opacity: 0.7; }
+}
+
+.background-container{
+    position: fixed;
+    top: 0;
+    left:0;
+    bottom: 0;
+    right: 0;
+}
+
+.stars{
+  background: black url("assets/img/startrek/weltraum.jpg") ;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    z-index: 0;
+}
+.clouds {
+    width:200%;
+    height: 100%;
+    background: transparent url("assets/img/startrek/weltraumWolken.png") repeat;
+    background-size: 1000px 1000px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+    -moz-animation:move-background 50s linear infinite;
+    -ms-animation:move-background 50s linear infinite;
+    -o-animation:move-background 50s linear infinite;
+    -webkit-animation:move-background 50s linear infinite;
+    animation:move-background 50s linear infinite;
+}
+.clouds2 {
+    width:200%;
+    height: 100%;
+    background: transparent url("assets/img/startrek/weltraumWolken2.png") repeat;
+    background-size: 1000px 1000px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+    -moz-animation:move-background 25s linear infinite;
+    -ms-animation:move-background 25s linear infinite;
+    -o-animation:move-background 25s linear infinite;
+    -webkit-animation:move-background 25s linear infinite;
+    animation:move-background 25s linear infinite;
+}
+#scroll-text a:link, #scroll-text a:visited{
+    color: #fd9800;
+    text-decoration: none;
+}
+  
+   `,
+
+  "textFields" : [
+    { "title": "<div id=\"scroll-text\">\n" +
+          "Dozent Hubert Zitt von der Hochschule Kaiserslautern <br>" +
+          "erlaeutert, ob die technischen Visionen " +
+          "aus der Fernsehserie Star Trek in Zukunft " +
+          "umsetzbar sind. <br><br>" +
+          "Fuer zusaetzliche informationen besuchen Sie bitte die <a href='https://projekt.bht-berlin.de/nsh/wissenschaft-science-fiction' target='_blank'>Offizielle Veranstaltungsseite.</a><br>" +
+          "</div>"
+    },
+    { "header": "",
+      "text": "23.11.<br>2023<br><br><br><br>15:00<br>Uhr"
+    },
+    { "header": "",
+      "text": "-299102.4"
+    },
+    { "header": "",
+      "text": "Ingeborg-Meising-Saal (BHT)<br><br><br>Haus Grashof <br><br><br>Luxemburger Str. 10<br> 13353 Berlin"
+    },
+    { "header": "<a href='https://projekt.bht-berlin.de/fileadmin/projekt/nsh/Dokumente/Bordkarte_2023.pdf' target=\"_blank\">Star Trek Bordkarte</div>",
+      "text": "<a href='https://www.startrekvorlesung.de/crew' target=\"_blank\">Dr.-Ing. Hubert Zitt</div>"
+    },
+    { "header": "",
+      "text": "-299102.16"
+    },
+    { "header": "",
+      "text": "Ende <br><br><br><br><br> 17:00 <br> Uhr"
+    },
+  ],
+  /*"linkBox": [
+      {
+      "text": "Star Trek Vorlesung",
+      "image": "",
+      "url": ""
+      },
+  ],*/
+  "partnerBox": [
+    {
+      "image":"assets/img/logos/startrek/ZITT_ScienceFiction.png",
+      "url": "https://www.startrekvorlesung.de"
+
+    }],
+
+  "entries":[
+    {
+      "streamname": "RBJ00-oE9ul", // high
+      "info": { "bitrate": 3000, "width": 1280, "height": 720, "framerate": 25 }
+    },
+    {
+      "streamname": "RBJ00-XsL5l", // medium
+      "info": { "bitrate": 1200, "width": 852, "height": 480, "framerate": 30 }
+    },
+    {
+      "streamname": "RBJ00-oLuan", // low
+      "info": { "bitrate": 800, "width": 640, "height": 360, "framerate": 25 }
+    }],
+  "dual": [],
+});
+
+/**
+ *  Stream Hochschultag (Every year) --------------------------------------------------------------------------------------------------------------------------------
+ */
+streams.push({
+  "tag": "hochschultag",
+  "titleTop": "Hochschultag",
+  "title": "Berliner Hochschule für Technik",
+  "image": "",
+  "debug": false,
+  "chat": false,
+  "customStyle": `
+  
+  body{
+    background-image: url("assets/img/backgrounds/2022_Hochschultag.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family: "BHT-CaseMicro", sans-serif;
+  }
+  
+  #header{ 
+    height: 60px;
+    
+    margin: 0;
+  }
+  
+  #footer{
+    background-image: linear-gradient(to top, white 0%, #ffffffc7 50%);
+    background-color: #ffffff00;
+    font-family: "BHT-Case", sans-serif;
+  }
+  
+  #error{
+    font-family: "BHT-Case", sans-serif;
+  }
+  
+  
+  #main{
+      background-color: rgb(234 234 234 / 0%);
+  }
+
+
+            `,
+  /*"partnerBox": [
+    {}],
+  "linkBox": [
+  { "text": "BHT Berlin",
+     "image": "",
+     "url": "https://www.bht-berlin.de/"
+   }],
+  "textFields" : [
+    { "title": "<"
+    },
+    { "header": "",
+      "text": ""
+    },
+  ],*/
+  "linkBox": [
+    { "text": "Hochschultag",
+      "image": "",
+      "url": "https://www.bht-berlin.de/hochschultag"
+    }],
+  "entries":[
+    {
+      "streamname": "RBJ00-9Miqw", // high
+      "info": { "bitrate": 4600, "width": 1920, "height": 1080, "framerate": 30 }
+    },
+    {
+      "streamname": "RBJ00-02JJR", // medium
+      "info": { "bitrate": 2000, "width": 1280, "height": 720, "framerate": 30 }
+    },
+    {
+      "streamname": "RBJ00-FjJI1", // low
+      "info": { "bitrate": 800, "width": 852, "height": 480, "framerate": 30 }
+    }],
+  "dual": [],
+});
+
 
 /**
  *  Stream für die Bachelorarbeit Steve Margenfeld Julia Hoffmann --------------------------------------------------------------------------------------------------------------------------------
