@@ -18,7 +18,7 @@ let players = [];
 let logDiv = "status";
 
 /**
- * Loggs given object to the console
+ * Logs given object to the console
  * @param e object to be logged
  */
 var log = function (e) {
