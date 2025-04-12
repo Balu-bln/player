@@ -97,11 +97,11 @@ streams.push({
       "info": { "bitrate": 1200, "width": 1280, "height": 720, "framerate": 30 }
     },
     {
-      "streamname": "RBJ00-J0hGb", // medium
+      "streamname": "0b2edcf1-1f0d-4c28-9d15-5d4dec789e1e", // medium
       "info": { "bitrate": 800, "width": 854, "height": 480, "framerate": 15 }
     },
     {
-      "streamname": "RBJ00-SS48m", // low
+      "streamname": "873ddae6-677d-4783-ab56-ea92db7313c8", // low
       "info": { "bitrate": 400, "width": 640, "height": 360, "framerate": 15 }
     }
   ]
